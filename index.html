@@ -135,6 +135,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Iterative-features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/21/Iterative-features-selection/">Iterative features selection</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
+  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p><br><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><br><p><b>It is very time consuming.</b></p>
+
+<pre><code>&quot;&quot;&quot;
+Part of the code.
+Just to show the application of RFE model selection.
+&quot;&quot;&quot;
+from sklearn.feature_selection import RFE
+from sklean.linear_model import LogisticRegression
+
+select = RFE(RandomForestClassifier(n_estimators = 100, random_state = 42), n_features_to_select = 40)select.fit(X_train, y_train)
+X_train_rfe = select.transform(X_train)
+X_test_rfe = select.transform(X_test)
+score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)
+
+print &quot;Test score: {:.3f}&quot;.format(score)
+</code></pre><blockquote>
+<p>Test score: 0.951</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">/Notes/ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/21/Iterative-features-selection/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Data-encoding-and-Features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -631,6 +707,10 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">/Notes/ML</a>
+              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ML</a>
