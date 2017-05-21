@@ -9,13 +9,13 @@
   <title>Iterative features selection | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
-<meta name="keywords" content="&#x2F;NOTES&#x2F;ML">
+<meta name="keywords" content="ML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Iterative features selection">
 <meta property="og:url" content="http://yoursite.com/2017/05/21/Iterative-features-selection/index.html">
 <meta property="og:site_name" content="Springbudder">
 <meta property="og:description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
-<meta property="og:updated_time" content="2017-05-21T12:03:31.077Z">
+<meta property="og:updated_time" content="2017-05-21T12:06:18.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Iterative features selection">
 <meta name="twitter:description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
@@ -159,8 +159,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="Forward-and-Backward"><a href="#Forward-and-Backward" class="headerlink" title="Forward and Backward"></a>Forward and Backward</h4><p></p><p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p><p></p>
-<p></p><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><p></p>
-<p></p><p><b>It is very time consuming.</b></p><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">Part of the code.</div><div class="line">Just to show the application of RFE model selection.</div><div class="line">"""</div><div class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE</div><div class="line"><span class="keyword">from</span> sklean.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"></div><div class="line">select = RFE(RandomForestClassifier(n_estimators = <span class="number">100</span>, random_state = <span class="number">42</span>), n_features_to_select = <span class="number">40</span>)select.fit(X_train, y_train)</div><div class="line">X_train_rfe = select.transform(X_train)</div><div class="line">X_test_rfe = select.transform(X_test)</div><div class="line">score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Test score: &#123;:.3f&#125;"</span>.format(score)</div><div class="line">Test score: <span class="number">0.951</span></div></pre></td></tr></table></figure><p></p>
+<p></p><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><br><b>It is very time consuming.</b><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">Part of the code.</div><div class="line">Just to show the application of RFE model selection.</div><div class="line">"""</div><div class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE</div><div class="line"><span class="keyword">from</span> sklean.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"></div><div class="line">select = RFE(RandomForestClassifier(n_estimators = <span class="number">100</span>, random_state = <span class="number">42</span>), n_features_to_select = <span class="number">40</span>)select.fit(X_train, y_train)</div><div class="line">X_train_rfe = select.transform(X_train)</div><div class="line">X_test_rfe = select.transform(X_test)</div><div class="line">score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Test score: &#123;:.3f&#125;"</span>.format(score)</div><div class="line">Test score: <span class="number">0.951</span></div></pre></td></tr></table></figure><p></p>
 
       
 
@@ -174,7 +173,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">/NOTES/ML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
         		</li>
       		
 		</ul>
@@ -325,10 +324,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">/NOTES/ML</a>
               </li>
              
               <li class="article-tag-list-item">
