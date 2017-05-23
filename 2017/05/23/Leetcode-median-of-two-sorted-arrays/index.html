@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Springbudder</title>
+  <title>Leetcode: median of two sorted arrays | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Springbudder">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restricti">
+<meta name="keywords" content="Leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode: median of two sorted arrays">
+<meta property="og:url" content="http://yoursite.com/2017/05/23/Leetcode-median-of-two-sorted-arrays/index.html">
 <meta property="og:site_name" content="Springbudder">
+<meta property="og:description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restricti">
+<meta property="og:updated_time" content="2017-05-23T05:25:27.446Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Springbudder">
+<meta name="twitter:title" content="Leetcode: median of two sorted arrays">
+<meta name="twitter:description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restricti">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -143,36 +148,55 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Leetcode-median-of-two-sorted-arrays" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" class="archive-article-date">
-  	<time datetime="2017-05-23T05:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">Leetcode: median of two sorted arrays</a>
+    <h1 class="article-title" itemprop="name">
+      Leetcode: median of two sorted arrays
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" class="archive-article-date">
+  	<time datetime="2017-05-23T05:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Something interesting.</p>
+<p>When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding is tedious and the program was fragile to break down. </p>
+<p>Fortunatelym, Python is coming. In my opinion, even though Python is a scipt language, but more elegant, easier to understand. For example,</p>
+<pre><code>class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        &quot;&quot;&quot;
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: float
+        &quot;&quot;&quot;
+        for item in nums2:
+               nums1.append(item)
+
+        temp = sorted(nums1)
+        length = len(temp)
+
+        if (length % 2 == 0):
+            return (temp[length/2 - 1] + temp[length/2]) * 1.0 / 2
+        else:
+            return temp[(length - 1) / 2]
+</code></pre><p>After submission, accpeted. Hahaha.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -184,312 +208,38 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/22/太祖称汗/" class="archive-article-date">
-  	<time datetime="2017-05-22T10:20:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/22/太祖称汗/">《蒙古纪事本末》 - 太祖称汗</a>
-    </h1>
+  
+    <a href="/2017/05/22/太祖称汗/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《蒙古纪事本末》 - 太祖称汗</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mongol</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/21/Iterative-features-selection/">Iterative features selection</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/Data-encoding-and-Features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-20T12:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/Data-encoding-and-Features-selection/">Data encoding and Features selection</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/" class="archive-article-date">
-  	<time datetime="2017-05-20T07:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">k-Means, DBSCAN and agglomerative clustring</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/Something-about-t-SNE/" class="archive-article-date">
-  	<time datetime="2017-05-19T19:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/Something-about-t-SNE/">Something about t-SNE</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/19/Why-we-need-scaling/" class="archive-article-date">
-  	<time datetime="2017-05-19T12:49:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/19/Why-we-need-scaling/">Why we need scaling?</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/06/Hyperparameters-tunning/" class="archive-article-date">
-  	<time datetime="2017-01-05T16:52:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/06/Hyperparameters-tunning/">Hyperparameters tunning</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/02/Issues-about-machine-learning/" class="archive-article-date">
-  	<time datetime="2017-01-01T17:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/02/Issues-about-machine-learning/">Issues about machine learning</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -512,8 +262,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
