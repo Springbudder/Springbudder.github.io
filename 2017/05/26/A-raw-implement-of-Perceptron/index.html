@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/5 | Springbudder</title>
+  <title>A raw implement of Perceptron | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Springbudder">
-<meta property="og:url" content="http://yoursite.com/archives/2017/05/index.html">
+  <meta name="description" content="The perceptron classified the two Iris flower classes perfectly, convergence is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:  the perceptron learning rul">
+<meta name="keywords" content="ML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A raw implement of Perceptron">
+<meta property="og:url" content="http://yoursite.com/2017/05/26/A-raw-implement-of-Perceptron/index.html">
 <meta property="og:site_name" content="Springbudder">
+<meta property="og:description" content="The perceptron classified the two Iris flower classes perfectly, convergence is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:  the perceptron learning rul">
+<meta property="og:updated_time" content="2017-05-26T14:52:54.958Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Springbudder">
+<meta name="twitter:title" content="A raw implement of Perceptron">
+<meta name="twitter:description" content="The perceptron classified the two Iris flower classes perfectly, convergence is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:  the perceptron learning rul">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -143,36 +148,112 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-A-raw-implement-of-Perceptron" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      A raw implement of Perceptron
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/26/A-raw-implement-of-Perceptron/" class="archive-article-date">
+
+        
+        <a href="/2017/05/26/A-raw-implement-of-Perceptron/" class="archive-article-date">
   	<time datetime="2017-05-26T14:44:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/26/A-raw-implement-of-Perceptron/">A raw implement of Perceptron</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p>The perceptron classified the two Iris flower classes perfectly, <b>convergence</b> is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:</p>
+<blockquote>
+<p><b><em>the perceptron learning rule converges if the two classes can be separated by a linear hyperplane. </em></b></p>
+</blockquote>
+<p>However, if classes cannot be separated perfectly by such a linear decision boundary, the weights will never stop updating unless we set a maximum number of <b>epochs</b>.</p>
+<pre><code>class Perceptron(object):
+&quot;&quot;&quot;
+Perceptron classifier.
 
-        <div class="article-info info-on-right">
-          
+
+Parameters
+---------------------------
+eta: float
+    Learning rate (between 0.0 and 1.0)
+
+n_iter: int
+    Passes over the traning dataset
+
+
+
+Attributes    
+---------------------------
+w_: 1d-array
+    Weights after fitting
+
+errors_: list
+    Number of misclassification in every epoch
+
+&quot;&quot;&quot;
+
+def __init__(self, eta = 0.01, n_iter = 10):
+    self.eta = eta
+    self.n_iter = n_iter
+
+def fit(self, X, y):       
+    &quot;&quot;&quot;
+    fit the traning data
+
+    Parameters
+    ----------------------------
+    X: {array-like}, shape = [n_sample, n_features]
+        Training vectors, where n_samples is the number of samples and 
+        n_features is the number of features
+
+    y: array-like, shape = [n_samples]
+        Target values.
+
+
+    Returns
+    ----------------------------
+    self: object
+
+    &quot;&quot;&quot;
+    self.w_ = np.zeros(1 + X.shape[1])
+    self.errors_ = []
+
+    for _ in range(self.n_iter):
+        errors = 0
+        for xi, target in zip(X, y):
+            update = self.eta * (target - self.predict(xi))
+            self.w_[1:] += update * xi
+            self.w_[0] += update
+            errors += int(update != 0.0)
+
+        self.errors_.append(errors)    
+    return self
+
+def net_input(self, X):
+    &quot;&quot;&quot;
+    Calculate net input
+    &quot;&quot;&quot;
+    return np.dot(X, self.w_[1:] + self.w_[0])
+
+def predict(self, X):
+    &quot;&quot;&quot;
+    Return class label after unit step
+    &quot;&quot;&quot;
+    return np.where(self.net_input(X) &gt;= 0.0, 1, -1)
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -184,285 +265,38 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" class="archive-article-date">
-  	<time datetime="2017-05-23T05:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">Leetcode: median of two sorted arrays</a>
-    </h1>
+  
+    <a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Leetcode: median of two sorted arrays</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/22/太祖称汗/" class="archive-article-date">
-  	<time datetime="2017-05-22T10:20:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/22/太祖称汗/">《蒙古纪事本末》 - 太祖称汗</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mongol</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/21/Iterative-features-selection/">Iterative features selection</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/Data-encoding-and-Features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-20T12:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/Data-encoding-and-Features-selection/">Data encoding and Features selection</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/" class="archive-article-date">
-  	<time datetime="2017-05-20T07:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">k-Means, DBSCAN and agglomerative clustring</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/Something-about-t-SNE/" class="archive-article-date">
-  	<time datetime="2017-05-19T19:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/Something-about-t-SNE/">Something about t-SNE</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/19/Why-we-need-scaling/" class="archive-article-date">
-  	<time datetime="2017-05-19T12:49:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/19/Why-we-need-scaling/">Why we need scaling?</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -485,8 +319,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

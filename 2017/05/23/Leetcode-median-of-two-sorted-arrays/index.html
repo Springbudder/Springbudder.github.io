@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Leetcode: median of two sorted arrays | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restricti">
+  <meta name="description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of a">
 <meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Leetcode: median of two sorted arrays">
 <meta property="og:url" content="http://yoursite.com/2017/05/23/Leetcode-median-of-two-sorted-arrays/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restricti">
-<meta property="og:updated_time" content="2017-05-23T05:25:27.446Z">
+<meta property="og:description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of a">
+<meta property="og:updated_time" content="2017-05-23T13:41:24.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Leetcode: median of two sorted arrays">
-<meta name="twitter:description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restricti">
+<meta name="twitter:description" content="Something interesting. When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of a">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -169,8 +169,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Something interesting.</p>
-<p>When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding is tedious and the program was fragile to break down. </p>
-<p>Fortunatelym, Python is coming. In my opinion, even though Python is a scipt language, but more elegant, easier to understand. For example,</p>
+<p>When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding was tedious and the program was not roubust. </p>
+<p>Fortunately, Python is available. Even though Python is a scipt language, it is more elegant, easier to understand compared to god damn C++. On the other hand, C++ standard library is convineient as well, but once it be used, our original ideal derailed obviously, since show off matters a lot. </p>
+<p>Now get to business:</p>
 <pre><code>class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
         &quot;&quot;&quot;
@@ -188,8 +189,7 @@
             return (temp[length/2 - 1] + temp[length/2]) * 1.0 / 2
         else:
             return temp[(length - 1) / 2]
-</code></pre><p>After submission, accpeted. Hahaha.</p>
-
+</code></pre>
       
 
       
@@ -220,6 +220,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/05/26/A-raw-implement-of-Perceptron/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          A raw implement of Perceptron
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/22/太祖称汗/" id="article-nav-older" class="article-nav-link-wrap">
@@ -356,11 +365,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">

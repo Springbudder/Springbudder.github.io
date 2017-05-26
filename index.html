@@ -145,6 +145,142 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-A-raw-implement-of-Perceptron" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/26/A-raw-implement-of-Perceptron/">A raw implement of Perceptron</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/26/A-raw-implement-of-Perceptron/" class="archive-article-date">
+  	<time datetime="2017-05-26T14:44:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p>The perceptron classified the two Iris flower classes perfectly, <b>convergence</b> is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:</p>
+<blockquote>
+<p><b><em>the perceptron learning rule converges if the two classes can be separated by a linear hyperplane. </em></b></p>
+</blockquote>
+<p>However, if classes cannot be separated perfectly by such a linear decision boundary, the weights will never stop updating unless we set a maximum number of <b>epochs</b>.</p>
+<pre><code>class Perceptron(object):
+&quot;&quot;&quot;
+Perceptron classifier.
+
+
+Parameters
+---------------------------
+eta: float
+    Learning rate (between 0.0 and 1.0)
+
+n_iter: int
+    Passes over the traning dataset
+
+
+
+Attributes    
+---------------------------
+w_: 1d-array
+    Weights after fitting
+
+errors_: list
+    Number of misclassification in every epoch
+
+&quot;&quot;&quot;
+
+def __init__(self, eta = 0.01, n_iter = 10):
+    self.eta = eta
+    self.n_iter = n_iter
+
+def fit(self, X, y):       
+    &quot;&quot;&quot;
+    fit the traning data
+
+    Parameters
+    ----------------------------
+    X: {array-like}, shape = [n_sample, n_features]
+        Training vectors, where n_samples is the number of samples and 
+        n_features is the number of features
+
+    y: array-like, shape = [n_samples]
+        Target values.
+
+
+    Returns
+    ----------------------------
+    self: object
+
+    &quot;&quot;&quot;
+    self.w_ = np.zeros(1 + X.shape[1])
+    self.errors_ = []
+
+    for _ in range(self.n_iter):
+        errors = 0
+        for xi, target in zip(X, y):
+            update = self.eta * (target - self.predict(xi))
+            self.w_[1:] += update * xi
+            self.w_[0] += update
+            errors += int(update != 0.0)
+
+        self.errors_.append(errors)    
+    return self
+
+def net_input(self, X):
+    &quot;&quot;&quot;
+    Calculate net input
+    &quot;&quot;&quot;
+    return np.dot(X, self.w_[1:] + self.w_[0])
+
+def predict(self, X):
+    &quot;&quot;&quot;
+    Return class label after unit step
+    &quot;&quot;&quot;
+    return np.where(self.net_input(X) &gt;= 0.0, 1, -1)
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/26/A-raw-implement-of-Perceptron/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Leetcode-median-of-two-sorted-arrays" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -166,8 +302,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Something interesting.</p>
-<p>When I try to figure out this quesion in Leetcode with C++, I found it was very complicated. If you did not use the standard library, given the conplexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding is tedious and the program was fragile to break down. </p>
-<p>Fortunatelym, Python is coming. In my opinion, even though Python is a scipt language, but more elegant, easier to understand. For example,</p>
+<p>When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding was tedious and the program was not roubust. </p>
+<p>Fortunately, Python is available. Even though Python is a scipt language, it is more elegant, easier to understand compared to god damn C++. On the other hand, C++ standard library is convineient as well, but once it be used, our original ideal derailed obviously, since show off matters a lot. </p>
+<p>Now get to business:</p>
 <pre><code>class Solution(object):
     def findMedianSortedArrays(self, nums1, nums2):
         &quot;&quot;&quot;
@@ -185,8 +322,7 @@
             return (temp[length/2 - 1] + temp[length/2]) * 1.0 / 2
         else:
             return temp[(length - 1) / 2]
-</code></pre><p>After submission, accpeted. Hahaha.</p>
-
+</code></pre>
       
 
       
@@ -850,11 +986,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
