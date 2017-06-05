@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Iterative features selection | Springbudder</title>
+  <title>LeetCode-Remove Element-27 | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
-<meta name="keywords" content="ML">
+  <meta name="description" content="Given an array and a value, remove all instances of that value in place and return the new length.Do not allocate extra space for another array, you must do this in place with constant memory.The orde">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Iterative features selection">
-<meta property="og:url" content="http://yoursite.com/2017/05/21/Iterative-features-selection/index.html">
+<meta property="og:title" content="LeetCode-Remove Element-27">
+<meta property="og:url" content="http://yoursite.com/2017/06/05/LeetCode-Remove-Element-27/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
-<meta property="og:updated_time" content="2017-05-21T12:06:18.476Z">
+<meta property="og:description" content="Given an array and a value, remove all instances of that value in place and return the new length.Do not allocate extra space for another array, you must do this in place with constant memory.The orde">
+<meta property="og:updated_time" content="2017-06-05T12:24:36.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Iterative features selection">
-<meta name="twitter:description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
+<meta name="twitter:title" content="LeetCode-Remove Element-27">
+<meta name="twitter:description" content="Given an array and a value, remove all instances of that value in place and return the new length.Do not allocate extra space for another array, you must do this in place with constant memory.The orde">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -148,28 +148,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Iterative-features-selection" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode-Remove-Element-27" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Iterative features selection
+      LeetCode-Remove Element-27
     </h1>
   
 
         
-        <a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+        <a href="/2017/06/05/LeetCode-Remove-Element-27/" class="archive-article-date">
+  	<time datetime="2017-06-05T12:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Forward-and-Backward"><a href="#Forward-and-Backward" class="headerlink" title="Forward and Backward"></a>Forward and Backward</h4><p></p><p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p><p></p>
-<p></p><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><br><b>It is very time consuming.</b><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">Part of the code.</div><div class="line">Just to show the application of RFE model selection.</div><div class="line">"""</div><div class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE</div><div class="line"><span class="keyword">from</span> sklean.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"></div><div class="line">select = RFE(RandomForestClassifier(n_estimators = <span class="number">100</span>, random_state = <span class="number">42</span>), n_features_to_select = <span class="number">40</span>)select.fit(X_train, y_train)</div><div class="line">X_train_rfe = select.transform(X_train)</div><div class="line">X_test_rfe = select.transform(X_test)</div><div class="line">score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Test score: &#123;:.3f&#125;"</span>.format(score)</div><div class="line">Test score: <span class="number">0.951</span></div></pre></td></tr></table></figure><p></p>
+        <p>Given an array and a value, remove all instances of that value in place and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.<br><details><summary>Example</summary><strong>Example:</strong><br>Given input array <code>nums = [3,2,2,3]</code>, <code>val = 3</code>.<br><br>Your function should return <code>length = 2</code>, with the first two elements of nums being <code>2</code>.</details><br>C++ Version<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></div><div class="line">       <span class="string">"""</span></div><div class="line">       :type nums: List[int]</div><div class="line">       :type val: int</div><div class="line">       :rtype: int</div><div class="line">       """</div><div class="line">       head = <span class="number">0</span></div><div class="line">       <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">           <span class="keyword">if</span> (nums[i] != val):</div><div class="line">               nums[head] = nums[i]</div><div class="line">               head += <span class="number">1</span></div><div class="line">       <span class="keyword">return</span> head</div></pre></td></tr></table></figure></p>
 
       
 
@@ -183,7 +182,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		
 		</ul>
@@ -202,18 +201,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/05/22/太祖称汗/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《蒙古纪事本末》 - 太祖称汗
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/20/Data-encoding-and-Features-selection/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Data encoding and Features selection</div>
+    <a href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python Decorators and R Functional Programming</div>
       <i class="icon-circle-right"></i>
     </a>
   
