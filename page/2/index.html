@@ -145,6 +145,68 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Leetcode-median-of-two-sorted-arrays" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">Leetcode: median of two sorted arrays</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" class="archive-article-date">
+  	<time datetime="2017-05-23T05:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Something interesting.</p>
+<p>When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding was tedious and the program was not roubust. </p>
+<p>Fortunately, Python is available. Even though Python is a scipt language, it is more elegant, easier to understand compared to god damn C++. On the other hand, C++ standard library is convineient as well, but once it be used, our original ideal derailed obviously, since show off matters a lot. </p>
+<p>Now get to business:<br><figure class="highlight python"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span><span class="params">(self, nums1, nums2)</span>:</span></div><div class="line">    	<span class="string">"""</span></div><div class="line">    	:type nums1: List[int]</div><div class="line">    	:type nums2: List[int]</div><div class="line">    	:rtype: float</div><div class="line">    	"""</div><div class="line">    	<span class="keyword">for</span> item <span class="keyword">in</span> nums2:</div><div class="line">       		nums1.append(item)</div><div class="line">    </div><div class="line">    	temp = sorted(nums1)</div><div class="line">    	length = len(temp)</div><div class="line">    </div><div class="line">    	<span class="keyword">if</span> (length % <span class="number">2</span> == <span class="number">0</span>):</div><div class="line">        	<span class="keyword">return</span> (temp[length/<span class="number">2</span> - <span class="number">1</span>] + temp[length/<span class="number">2</span>]) * <span class="number">1.0</span> / <span class="number">2</span></div><div class="line">    	<span class="keyword">else</span>:</div><div class="line">        	<span class="keyword">return</span> temp[(length - <span class="number">1</span>) / <span class="number">2</span>]`</div><div class="line"></div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-太祖称汗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -780,10 +842,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
