@@ -709,7 +709,23 @@ Several approaches for this issue are as follows:
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="public\My_HTML\sunburst">See the inteactive sunburst</a></p>
+        <h3 id="How-to-post-R-interactive-file-to-Hexo"><a href="#How-to-post-R-interactive-file-to-Hexo" class="headerlink" title="How to post R interactive file to Hexo"></a>How to post R interactive file to Hexo</h3><ul>
+<li>R<ol>
+<li>Open the interactive file in new window</li>
+<li>Save the standalone web page</li>
+<li>Open the web inspector in RStudio</li>
+<li>Copy the <code>index.html</code> file</li>
+<li>Change the <code>CSS</code> and <code>js</code> file path to the current folder</li>
+</ol>
+</li>
+<li>Hexo<ol>
+<li>Create a folder in <code>Hexo/source/..</code> folder</li>
+<li>Add the <code>skip_render: created/**</code> in the <code>_config.yml</code> file</li>
+<li>Check the web page use the url <code>mysite.me/created</code></li>
+<li>Insert the url <code>public\created</code> in other post (relative path)<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><a href="public\My_HTML\sunburst">See the inteactive sunburst</a></li>
+</ol>
+</li>
+</ul>
 
       
 
