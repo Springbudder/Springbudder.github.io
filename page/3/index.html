@@ -127,6 +127,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Why-we-need-scaling" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/19/Why-we-need-scaling/">Why we need scaling?</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/19/Why-we-need-scaling/" class="archive-article-date">
+  	<time datetime="2017-05-19T12:49:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Explanantion-1"><a href="#Explanantion-1" class="headerlink" title="Explanantion 1:"></a>Explanantion 1:</h4><p>Scaling before applying SVM is very important. Part 2 of Sarle’s Neural Networks FAQ Sarle (1997) explains the importance of this and most of considerations also apply to SVM. The main advantage of scaling is <b>to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges</b>. Another advantage is <b>to avoid numerical difficulties during the calculation</b>. Because kernel values usually depend on the inner products of feature vectors, e.g. the linear kernel and the polynomial kernel, large attribute values might cause numerical problems. We recommend linearly scaling each attribute to the range [−1, +1] or [0, 1].</p>
+
+<p>Of course we have to use the same method to scale both training and testing data. For example, suppose that we scaled the first attribute of training data from [−10, +10] to [−1, +1]. If the first attribute of testing data lies in the range [−11, +8], we must scale the testing data to [−1.1, +0.8]. See Appendix B for some real examples.</p>
+
+<p><a href="http://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf" target="_blank" rel="external">Reference of Explanantion 1</a></p>
+<h4 id="Explanantion-2"><a href="#Explanantion-2" class="headerlink" title="Explanantion 2:"></a>Explanantion 2:</h4><ul>
+<li>Remember the kernel trick used in SVMs depends on inner products between training examples. If one component is much larger than the others, then it will affect the inner product more than the others, which means the classifier won’t care about most of the other features.</li>
+<li>Any svm solver runs a numerical optimization and it is necessary to estimate the step size it takes to reach convergence.   If the step size is too small, the solver will take forever to reach the global minimum.  If it is too big, it will get close fast but then oscillate around the global minimum.  The step size needs to be in some unit of measurement, and this unit is  normalized by looking at the volume of the data set, such as a ball  bounding the entire set of points.</li>
+</ul>
+<p><a href="https://www.quora.com/Why-scaling-is-important-for-the-linear-SVM-classification" target="_blank" rel="external">Reference of Explanantion 2</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVM</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/19/Why-we-need-scaling/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Hyperparameters-tunning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -361,11 +429,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ML</a>
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">ML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -377,15 +445,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
             
             <div class="clearfix"></div>
