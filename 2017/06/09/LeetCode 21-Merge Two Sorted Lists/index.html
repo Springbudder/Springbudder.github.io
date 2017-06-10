@@ -8,13 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>The maximum likehood estimation | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="Question: Merge two sorted lists: Linked Lists refrences C++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-linked list. * s">
+<meta name="keywords" content="Leetcode">
+<meta property="og:type" content="article">
 <meta property="og:title" content="The maximum likehood estimation">
-<meta property="og:url" content="http://yoursite.com/2017/06/09/The-maximum-likehood-estimation/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/06/09/LeetCode 21-Merge Two Sorted Lists/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:updated_time" content="2017-06-09T06:22:48.185Z">
+<meta property="og:description" content="Question: Merge two sorted lists: Linked Lists refrences C++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-linked list. * s">
+<meta property="og:updated_time" content="2017-06-10T07:37:47.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The maximum likehood estimation">
+<meta name="twitter:description" content="Question: Merge two sorted lists: Linked Lists refrences C++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-linked list. * s">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -126,7 +130,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-The-maximum-likehood-estimation" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode 21-Merge Two Sorted Lists" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -138,7 +142,7 @@
   
 
         
-        <a href="/2017/06/09/The-maximum-likehood-estimation/" class="archive-article-date">
+        <a href="/2017/06/09/LeetCode 21-Merge Two Sorted Lists/" class="archive-article-date">
   	<time datetime="2017-06-09T06:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
 </a>
         
@@ -146,7 +150,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Question: Merge two sorted lists:</p>
+<p><a href="http://cslibrary.stanford.edu/105/LinkedListProblems.pdf" target="_blank" rel="external">Linked Lists refrences</a></p>
+<p>C++ (Recursion: lower than dummy variable)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">result</span> = <span class="title">NULL</span>;</span></div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l2;</div><div class="line">        <span class="keyword">if</span> (l2 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l1;</div><div class="line">            </div><div class="line">        <span class="keyword">if</span> (l1-&gt;val &lt;= l2-&gt;val)</div><div class="line">        &#123;</div><div class="line">            result = l1;</div><div class="line">            result-&gt;next = mergeTwoLists(l1-&gt;next, l2);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            result = l2;</div><div class="line">            result-&gt;next = mergeTwoLists(l1, l2-&gt;next);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>C++ (Dummy variable)<br><br><br>Need to fullfill…</p>
+
       
 
       
@@ -154,6 +162,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -323,6 +342,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Leetcode</a>
               </li>
             
             <div class="clearfix"></div>
