@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>DFS and BFS | Springbudder</title>
+  <title>The maximum likehood estimation | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DFS: Stack (one to one)BFS: Queue (one to more)">
-<meta name="keywords" content="ML">
+  <meta name="description" content="DescriptionQuestion: Merge two sorted lists:Linked Lists refrences SolverC++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-">
+<meta name="keywords" content="Leetcode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DFS and BFS">
-<meta property="og:url" content="http://yoursite.com/2017/05/29/DFS-and-BFS/index.html">
+<meta property="og:title" content="The maximum likehood estimation">
+<meta property="og:url" content="http://yoursite.com/2017/06/09/LeetCode-21-Merge-Two-Sorted-Lists/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="DFS: Stack (one to one)BFS: Queue (one to more)">
-<meta property="og:updated_time" content="2017-06-01T13:39:00.374Z">
+<meta property="og:description" content="DescriptionQuestion: Merge two sorted lists:Linked Lists refrences SolverC++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-">
+<meta property="og:updated_time" content="2017-06-10T07:42:27.863Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DFS and BFS">
-<meta name="twitter:description" content="DFS: Stack (one to one)BFS: Queue (one to more)">
+<meta name="twitter:title" content="The maximum likehood estimation">
+<meta name="twitter:description" content="DescriptionQuestion: Merge two sorted lists:Linked Lists refrences SolverC++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -130,27 +130,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-DFS-and-BFS" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode-21-Merge-Two-Sorted-Lists" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      DFS and BFS
+      The maximum likehood estimation
     </h1>
   
 
         
-        <a href="/2017/05/29/DFS-and-BFS/" class="archive-article-date">
-  	<time datetime="2017-05-29T04:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-29</time>
+        <a href="/2017/06/09/LeetCode-21-Merge-Two-Sorted-Lists/" class="archive-article-date">
+  	<time datetime="2017-06-09T06:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DFS: Stack (one to one)<br><br><br>BFS: Queue (one to more)</p>
+        <h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Question: Merge two sorted lists:<br><a href="http://cslibrary.stanford.edu/105/LinkedListProblems.pdf" target="_blank" rel="external">Linked Lists refrences</a></p>
+<h4 id="Solver"><a href="#Solver" class="headerlink" title="Solver"></a>Solver</h4><p>C++ (Recursion: lower than dummy variable)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">result</span> = <span class="title">NULL</span>;</span></div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l2;</div><div class="line">        <span class="keyword">if</span> (l2 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l1;</div><div class="line">            </div><div class="line">        <span class="keyword">if</span> (l1-&gt;val &lt;= l2-&gt;val)</div><div class="line">        &#123;</div><div class="line">            result = l1;</div><div class="line">            result-&gt;next = mergeTwoLists(l1-&gt;next, l2);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            result = l2;</div><div class="line">            result-&gt;next = mergeTwoLists(l1, l2-&gt;next);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>C++ (Dummy variable)<br><br><br>Need to fullfill…</p>
 
       
 
@@ -164,7 +166,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Leetcode</a>
         		</li>
       		
 		</ul>
@@ -183,18 +185,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/05/30/sunburst-plot-and-d3-heatmap/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          sunburst plot and d3 heatmap
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/28/太宗嗣立/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">《蒙古纪事本末》 - 太宗嗣立</div>
+    <a href="/2017/06/08/Bias-Variance-Decompostion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Bias-Variance Decompostion</div>
       <i class="icon-circle-right"></i>
     </a>
   
