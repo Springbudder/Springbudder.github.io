@@ -127,6 +127,67 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LeetCode-21-Merge-Two-Sorted-Lists" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/">LeetCode 21-Merge Two Sorted Lists</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/" class="archive-article-date">
+  	<time datetime="2017-06-10T08:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Question: Merge two sorted lists:<br><a href="http://cslibrary.stanford.edu/105/LinkedListProblems.pdf" target="_blank" rel="external">Linked Lists refrences</a></p>
+<h4 id="Solver"><a href="#Solver" class="headerlink" title="Solver"></a>Solver</h4><p>C++ (Recursion: lower than dummy variable)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">result</span> = <span class="title">NULL</span>;</span></div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l2;</div><div class="line">        <span class="keyword">if</span> (l2 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l1;</div><div class="line">            </div><div class="line">        <span class="keyword">if</span> (l1-&gt;val &lt;= l2-&gt;val)</div><div class="line">        &#123;</div><div class="line">            result = l1;</div><div class="line">            result-&gt;next = mergeTwoLists(l1-&gt;next, l2);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            result = l2;</div><div class="line">            result-&gt;next = mergeTwoLists(l1, l2-&gt;next);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>C++ (Dummy variable)<br><br><br>Need to fullfill…</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Bias-Variance-Decompostion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -679,81 +740,6 @@ Several approaches for this issue are as follows:
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/05/31/Dynamic-Programming/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-sunburst-plot-and-d3-heatmap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/30/sunburst-plot-and-d3-heatmap/">sunburst plot and d3 heatmap</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/30/sunburst-plot-and-d3-heatmap/" class="archive-article-date">
-  	<time datetime="2017-05-30T14:21:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="How-to-post-R-interactive-file-to-Hexo"><a href="#How-to-post-R-interactive-file-to-Hexo" class="headerlink" title="How to post R interactive file to Hexo"></a>How to post R interactive file to Hexo</h3><ul>
-<li>R<ol>
-<li>Open the interactive file in new window</li>
-<li>Save the standalone web page</li>
-<li>Open the web inspector in RStudio</li>
-<li>Copy the <code>index.html</code> file</li>
-<li>Change the <code>CSS</code> and <code>js</code> file path to the current folder</li>
-</ol>
-</li>
-<li>Hexo<ol>
-<li>Create a folder in <code>Hexo/source/..</code> folder</li>
-<li>Add the <code>skip_render: created/**</code> in the <code>_config.yml</code> file</li>
-<li>Check the web page use the url <code>mysite.me/created</code></li>
-<li>Insert the url <code>/created</code> in other post (relative path)<h4 id="Example"><a href="#Example" class="headerlink" title="Example:"></a>Example:</h4><a href="/My_HTML/sunburst">See the inteactive sunburst</a></li>
-</ol>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">R/visualization</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/30/sunburst-plot-and-d3-heatmap/">read more... >></a>
         </p>
       
 

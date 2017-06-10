@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Springbudder</title>
+  <title>LeetCode 21-Merge Two Sorted Lists | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Springbudder">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="DescriptionQuestion: Merge two sorted lists:Linked Lists refrences SolverC++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode 21-Merge Two Sorted Lists">
+<meta property="og:url" content="http://yoursite.com/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/index.html">
 <meta property="og:site_name" content="Springbudder">
+<meta property="og:description" content="DescriptionQuestion: Merge two sorted lists:Linked Lists refrences SolverC++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-">
+<meta property="og:updated_time" content="2017-06-10T08:23:10.116Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Springbudder">
+<meta name="twitter:title" content="LeetCode 21-Merge Two Sorted Lists">
+<meta name="twitter:description" content="DescriptionQuestion: Merge two sorted lists:Linked Lists refrences SolverC++ (Recursion: lower than dummy variable)123456789101112131415161718192021222324252627282930313233/** * Definition for singly-">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -125,38 +130,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Why-we-need-scaling" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LeetCode-21-Merge-Two-Sorted-Lists" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/19/Why-we-need-scaling/">Why we need scaling?</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode 21-Merge Two Sorted Lists
     </h1>
   
 
         
-        <a href="/2017/05/19/Why-we-need-scaling/" class="archive-article-date">
-  	<time datetime="2017-05-19T12:49:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
+        <a href="/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/" class="archive-article-date">
+  	<time datetime="2017-06-10T08:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Explanantion-1"><a href="#Explanantion-1" class="headerlink" title="Explanantion 1:"></a>Explanantion 1:</h4><p>Scaling before applying SVM is very important. Part 2 of Sarle’s Neural Networks FAQ Sarle (1997) explains the importance of this and most of considerations also apply to SVM. The main advantage of scaling is <b>to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges</b>. Another advantage is <b>to avoid numerical difficulties during the calculation</b>. Because kernel values usually depend on the inner products of feature vectors, e.g. the linear kernel and the polynomial kernel, large attribute values might cause numerical problems. We recommend linearly scaling each attribute to the range [−1, +1] or [0, 1].</p>
-
-<p>Of course we have to use the same method to scale both training and testing data. For example, suppose that we scaled the first attribute of training data from [−10, +10] to [−1, +1]. If the first attribute of testing data lies in the range [−11, +8], we must scale the testing data to [−1.1, +0.8]. See Appendix B for some real examples.</p>
-
-<p><a href="http://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf" target="_blank" rel="external">Reference of Explanantion 1</a></p>
-<h4 id="Explanantion-2"><a href="#Explanantion-2" class="headerlink" title="Explanantion 2:"></a>Explanantion 2:</h4><ul>
-<li>Remember the kernel trick used in SVMs depends on inner products between training examples. If one component is much larger than the others, then it will affect the inner product more than the others, which means the classifier won’t care about most of the other features.</li>
-<li>Any svm solver runs a numerical optimization and it is necessary to estimate the step size it takes to reach convergence.   If the step size is too small, the solver will take forever to reach the global minimum.  If it is too big, it will get close fast but then oscillate around the global minimum.  The step size needs to be in some unit of measurement, and this unit is  normalized by looking at the volume of the data set, such as a ball  bounding the entire set of points.</li>
-</ul>
-<p><a href="https://www.quora.com/Why-scaling-is-important-for-the-linear-SVM-classification" target="_blank" rel="external">Reference of Explanantion 2</a></p>
+        <h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Question: Merge two sorted lists:<br><a href="http://cslibrary.stanford.edu/105/LinkedListProblems.pdf" target="_blank" rel="external">Linked Lists refrences</a></p>
+<h4 id="Solver"><a href="#Solver" class="headerlink" title="Solver"></a>Solver</h4><p>C++ (Recursion: lower than dummy variable)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for singly-linked list.</div><div class="line"> * struct ListNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     ListNode *next;</div><div class="line"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</div><div class="line"> * &#125;;</div><div class="line"> */</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function">ListNode* <span class="title">mergeTwoLists</span><span class="params">(ListNode* l1, ListNode* l2)</span> </span>&#123;</div><div class="line">        </div><div class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">ListNode</span>* <span class="title">result</span> = <span class="title">NULL</span>;</span></div><div class="line">        </div><div class="line">        <span class="keyword">if</span> (l1 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l2;</div><div class="line">        <span class="keyword">if</span> (l2 == <span class="literal">NULL</span>)</div><div class="line">            <span class="keyword">return</span> l1;</div><div class="line">            </div><div class="line">        <span class="keyword">if</span> (l1-&gt;val &lt;= l2-&gt;val)</div><div class="line">        &#123;</div><div class="line">            result = l1;</div><div class="line">            result-&gt;next = mergeTwoLists(l1-&gt;next, l2);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            result = l2;</div><div class="line">            result-&gt;next = mergeTwoLists(l1, l2-&gt;next);</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>C++ (Dummy variable)<br><br><br>Need to fullfill…</p>
 
       
 
@@ -170,7 +166,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVM</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		
 		</ul>
@@ -179,10 +175,6 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/19/Why-we-need-scaling/">read more... >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
@@ -190,122 +182,16 @@
   </div>
 </article>
 
-
-
-
-
   
-    <article id="post-Hyperparameters-tunning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/Hyperparameters-tunning/">Hyperparameters tunning</a>
-    </h1>
   
-
-        
-        <a href="/2017/01/06/Hyperparameters-tunning/" class="archive-article-date">
-  	<time datetime="2017-01-05T16:52:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Tuning-hyperparameters"><a href="#Tuning-hyperparameters" class="headerlink" title="Tuning hyperparameters"></a>Tuning hyperparameters</h3><ol>
-<li>Determing the range of parameters<ol>
-<li>Reading papers</li>
-<li>Anchor one parameter that can use</li>
-<li>Try others</li>
-</ol>
-</li>
-<li>Plotting</li>
-<li>Grid search(SVM, RandomForest) and Bayesian optimization(complicated model)</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/06/Hyperparameters-tunning/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
+    <a href="/2017/06/08/Bias-Variance-Decompostion/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Bias-Variance Decompostion</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
-    <article id="post-Issues-about-machine-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/02/Issues-about-machine-learning/">Issues about machine learning</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/02/Issues-about-machine-learning/" class="archive-article-date">
-  	<time datetime="2017-01-01T17:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Yesterday, I read a blog in Wechat that talks about the trend of bioinformatic in 2017. It seems that machine learning will be more and more important in acadimia or insustry. Since I have learned the theory and applications of machine learning for more than two years, so I was pretty delight hearing this news.</p>
-<p>In the passed two weeks…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/02/Issues-about-machine-learning/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
+</nav>
 
 
 
@@ -313,9 +199,10 @@
 
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -338,8 +225,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
