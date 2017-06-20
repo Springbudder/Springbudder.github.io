@@ -6,19 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Iterative features selection | Springbudder</title>
+  <title>Archives: 2017/6 | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
-<meta name="keywords" content="ML">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Iterative features selection">
-<meta property="og:url" content="http://yoursite.com/2017/05/21/Iterative-features-selection/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Springbudder">
+<meta property="og:url" content="http://yoursite.com/archives/2017/06/page/2/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
-<meta property="og:updated_time" content="2017-05-21T12:06:18.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Iterative features selection">
-<meta name="twitter:description" content="Forward and BackwardThere are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features">
+<meta name="twitter:title" content="Springbudder">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -130,87 +125,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Iterative-features-selection" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Iterative features selection
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/06/03/定宗嗣立/" class="archive-article-date">
+  	<time datetime="2017-06-03T13:01:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-03</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/06/03/定宗嗣立/">《蒙古纪事本末》 - 定宗嗣立</a>
     </h1>
   
 
-        
-        <a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Forward-and-Backward"><a href="#Forward-and-Backward" class="headerlink" title="Forward and Backward"></a>Forward and Backward</h4><p></p><p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p><p></p>
-<p></p><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><br><b>It is very time consuming.</b><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">Part of the code.</div><div class="line">Just to show the application of RFE model selection.</div><div class="line">"""</div><div class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE</div><div class="line"><span class="keyword">from</span> sklean.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"></div><div class="line">select = RFE(RandomForestClassifier(n_estimators = <span class="number">100</span>, random_state = <span class="number">42</span>), n_features_to_select = <span class="number">40</span>)select.fit(X_train, y_train)</div><div class="line">X_train_rfe = select.transform(X_train)</div><div class="line">X_test_rfe = select.transform(X_test)</div><div class="line">score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Test score: &#123;:.3f&#125;"</span>.format(score)</div><div class="line">Test score: <span class="number">0.951</span></div></pre></td></tr></table></figure><p></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Mongol</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/05/22/太祖称汗/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          《蒙古纪事本末》 - 太祖称汗
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/05/20/Data-encoding-and-Features-selection/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Data encoding and Features selection</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2017/06/">&laquo; Prev</a><a class="page-number" href="/archives/2017/06/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -234,8 +205,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
