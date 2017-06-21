@@ -127,6 +127,79 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Data-encoding-and-Features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/Data-encoding-and-Features-selection/">Data encoding and Features selection</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/20/Data-encoding-and-Features-selection/" class="archive-article-date">
+  	<time datetime="2017-05-20T12:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Representing-Data-and-Engineering-Features"><a href="#Representing-Data-and-Engineering-Features" class="headerlink" title="Representing Data and Engineering Features"></a>Representing Data and Engineering Features</h3><h4 id="Categorical-Data"><a href="#Categorical-Data" class="headerlink" title="Categorical Data"></a>Categorical Data</h4><ul>
+<li>One-Hot-Encoding (Dummy Variables)</li>
+</ul>
+<p>Dummy Varibles is quite straight-forward, for n features, different samples have different features. We can specify the feature that the samples embeded as 1, none as 0.<br><br><br><b>Note</b>: Dummy variables in machine learning differ from the statistics. In the later field, we denotes the dummy variable in the number ranged from 0 to n-1, n is the numbers of features. Why we should encode the dummy  variable in 0 and 1? <b>To avoid data matrix rank deficient.</b></p>
+<ul>
+<li>Binning, Discretization, Linear Models, and Trees</li>
+</ul>
+<p>Though bins is relatively powerful in linear regression, tree based methods seems more powerful than linear models. If there are some reasons we must used linear regression, then it will be <b>large datasize</b> and <b>tremendous features</b>. Besides, <b>expannation demands</b> also could be an alternative.</p>
+<hr>
+
+<h4 id="Automatical-Feature-selection"><a href="#Automatical-Feature-selection" class="headerlink" title="Automatical Feature selection"></a>Automatical Feature selection</h4><ul>
+<li>Univariate statistics</li>
+<li>Model based selection</li>
+<li>Iterative selection</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/20/Data-encoding-and-Features-selection/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-k-Means-DBSCAN-and-agglomerative-clustring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -556,15 +629,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,15 +637,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
             
             <div class="clearfix"></div>
