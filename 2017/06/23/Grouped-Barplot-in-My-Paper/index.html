@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Grouped Barplot in My Paper | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Here is the script draw a figure in my paper.1234567891011121314library(ggplot2)library(RColorBrewer)data &amp;lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv&quot;, header = TRUE)data\$Batch &amp;lt;- as.cha">
+  <meta name="description" content="Here is the script draw a figure in my paper.1234567891011121314library(ggplot2)library(RColorBrewer)data &amp;lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv&quot;, header = TRUE)data$Batch &amp;lt;- as.char">
 <meta name="keywords" content="Biology">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grouped Barplot in My Paper">
 <meta property="og:url" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="Here is the script draw a figure in my paper.1234567891011121314library(ggplot2)library(RColorBrewer)data &amp;lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv&quot;, header = TRUE)data\$Batch &amp;lt;- as.cha">
-<meta property="og:image" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/Grouped-Barplot-in-My-Paper/Rplot07">
-<meta property="og:updated_time" content="2017-06-23T11:43:31.473Z">
+<meta property="og:description" content="Here is the script draw a figure in my paper.1234567891011121314library(ggplot2)library(RColorBrewer)data &amp;lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv&quot;, header = TRUE)data$Batch &amp;lt;- as.char">
+<meta property="og:image" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/Grouped-Barplot-in-My-Paper/Rplot07.jpeg">
+<meta property="og:updated_time" content="2017-06-23T11:46:05.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grouped Barplot in My Paper">
-<meta name="twitter:description" content="Here is the script draw a figure in my paper.1234567891011121314library(ggplot2)library(RColorBrewer)data &amp;lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv&quot;, header = TRUE)data\$Batch &amp;lt;- as.cha">
-<meta name="twitter:image" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/Grouped-Barplot-in-My-Paper/Rplot07">
+<meta name="twitter:description" content="Here is the script draw a figure in my paper.1234567891011121314library(ggplot2)library(RColorBrewer)data &amp;lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv&quot;, header = TRUE)data$Batch &amp;lt;- as.char">
+<meta name="twitter:image" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/Grouped-Barplot-in-My-Paper/Rplot07.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -152,7 +152,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Here is the script draw a figure in my paper.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggplot2)</div><div class="line"><span class="keyword">library</span>(RColorBrewer)</div><div class="line">data &lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv<span class="string">", header = TRUE)</span></div><div class="line">data\$Batch &lt;- as.character(data\$Batch)</div><div class="line">data\$Batch &lt;- paste("Batch <span class="string">", data\$Batch)</span></div><div class="line">p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</div><div class="line"> 	+ geom_bar(stat = 'identity') + facet_wrap(~Batch, ncol = 5)</div><div class="line"> 	+ scale_fill_brewer(palette = "Set3<span class="string">")</span></div><div class="line"> 	+ theme(legend.key.size = unit(0.5, "cm<span class="string">")</span></div><div class="line"> 	+ theme(axis.text.x = element_blank())</div><div class="line"> 	+ theme(axis.ticks = element_blank())</div><div class="line"> 	+ guides(fill = guide_lengend((title = "Sampling sites<span class="string">")))</span></div><div class="line"> 	+ scale_y_continuous(expand = c(0,0))</div><div class="line"> 	+ labs(x = "Sampling sites<span class="string">")</span></div></pre></td></tr></table></figure><br>Here is the image:<br><img src="Grouped-Barplot-in-My-Paper/Rplot07" alt=""></p>
+        <p>Here is the script draw a figure in my paper.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggplot2)</div><div class="line"><span class="keyword">library</span>(RColorBrewer)</div><div class="line">data &lt;- read.csv(C:\\Users\\Huang\\Desktop\\my_data.csv<span class="string">", header = TRUE)</span></div><div class="line">data$Batch &lt;- as.character(data$Batch)</div><div class="line">data$Batch &lt;- paste("Batch <span class="string">", data$Batch)</span></div><div class="line">p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</div><div class="line"> 	+ geom_bar(stat = 'identity') + facet_wrap(~Batch, ncol = 5)</div><div class="line"> 	+ scale_fill_brewer(palette = "Set3<span class="string">")</span></div><div class="line"> 	+ theme(legend.key.size = unit(0.5, "cm<span class="string">")</span></div><div class="line"> 	+ theme(axis.text.x = element_blank())</div><div class="line"> 	+ theme(axis.ticks = element_blank())</div><div class="line"> 	+ guides(fill = guide_lengend((title = "Sampling sites<span class="string">")))</span></div><div class="line"> 	+ scale_y_continuous(expand = c(0,0))</div><div class="line"> 	+ labs(x = "Sampling sites<span class="string">")</span></div></pre></td></tr></table></figure><br>Here is the image:<br><img src="Grouped-Barplot-in-My-Paper/Rplot07.jpeg" alt=""></p>
 
       
 
