@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Grouped Barplot in My Paper | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data$Batch &amp;lt;- as.character(data$Batch)data">
+  <meta name="description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data\$Batch &amp;lt;- as.character(data\$Batch)da">
 <meta name="keywords" content="Biology">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Grouped Barplot in My Paper">
 <meta property="og:url" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data$Batch &amp;lt;- as.character(data$Batch)data">
-<meta property="og:image" content="http://yoursite.com/Rplot07">
-<meta property="og:updated_time" content="2017-06-23T11:35:11.236Z">
+<meta property="og:description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data\$Batch &amp;lt;- as.character(data\$Batch)da">
+<meta property="og:image" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/Grouped-Barplot-in-My-Paper/Rplot07">
+<meta property="og:updated_time" content="2017-06-23T11:38:46.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Grouped Barplot in My Paper">
-<meta name="twitter:description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data$Batch &amp;lt;- as.character(data$Batch)data">
-<meta name="twitter:image" content="http://yoursite.com/Rplot07">
+<meta name="twitter:description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data\$Batch &amp;lt;- as.character(data\$Batch)da">
+<meta name="twitter:image" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/Grouped-Barplot-in-My-Paper/Rplot07">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -154,7 +154,7 @@
       
         <p>Here is the script draw a figure in my paper.</p>
 <p><pre><br>library(ggplot2)<br>library(RColorBrewer)</pre></p>
-<p>data &lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)<br>data$Batch &lt;- as.character(data$Batch)<br>data$Batch &lt;- paste(“Batch “, data$Batch)<br>p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</p>
+<p>data &lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)<br>data\$Batch &lt;- as.character(data\$Batch)<br>data\$Batch &lt;- paste(“Batch “, data\$Batch)<br>p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</p>
 <pre><code>+ geom_bar(stat = &apos;identity&apos;) + facet_wrap(~Batch, ncol = 5)
 + scale_fill_brewer(palette = &quot;Set3&quot;)
 + theme(legend.key.size = unit(0.5, &quot;cm&quot;)
@@ -163,7 +163,7 @@
 + guides(fill = guide_lengend((title = &quot;Sampling sites&quot;)))
 + scale_y_continuous(expand = c(0,0))
 + labs(x = &quot;Sampling sites&quot;)
-</code></pre><p><br>Here is the image:<br><img src="/Rplot07" alt=""></p>
+</code></pre><p><br>Here is the image:<br><img src="Grouped-Barplot-in-My-Paper/Rplot07" alt=""></p>
 
       
 

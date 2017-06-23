@@ -149,7 +149,7 @@
       
         <p>Here is the script draw a figure in my paper.</p>
 <p><pre><br>library(ggplot2)<br>library(RColorBrewer)</pre></p>
-<p>data &lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)<br>data$Batch &lt;- as.character(data$Batch)<br>data$Batch &lt;- paste(“Batch “, data$Batch)<br>p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</p>
+<p>data &lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)<br>data\$Batch &lt;- as.character(data\$Batch)<br>data\$Batch &lt;- paste(“Batch “, data\$Batch)<br>p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</p>
 <pre><code>+ geom_bar(stat = &apos;identity&apos;) + facet_wrap(~Batch, ncol = 5)
 + scale_fill_brewer(palette = &quot;Set3&quot;)
 + theme(legend.key.size = unit(0.5, &quot;cm&quot;)
@@ -158,7 +158,7 @@
 + guides(fill = guide_lengend((title = &quot;Sampling sites&quot;)))
 + scale_y_continuous(expand = c(0,0))
 + labs(x = &quot;Sampling sites&quot;)
-</code></pre><p><br>Here is the image:<br><img src="/Rplot07" alt=""></p>
+</code></pre><p><br>Here is the image:<br><img src="Grouped-Barplot-in-My-Paper/Rplot07" alt=""></p>
 
       
 
