@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: LeetCode | Springbudder</title>
+  <title>Grouped Barplot in My Paper | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Springbudder">
-<meta property="og:url" content="http://yoursite.com/tags/LeetCode/index.html">
+  <meta name="description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data$Batch &amp;lt;- as.character(data$Batch)data">
+<meta name="keywords" content="Biology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Grouped Barplot in My Paper">
+<meta property="og:url" content="http://yoursite.com/2017/06/23/Grouped-Barplot-in-My-Paper/index.html">
 <meta property="og:site_name" content="Springbudder">
+<meta property="og:description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data$Batch &amp;lt;- as.character(data$Batch)data">
+<meta property="og:image" content="http://yoursite.com/Rplot07">
+<meta property="og:updated_time" content="2017-06-23T11:35:11.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Springbudder">
+<meta name="twitter:title" content="Grouped Barplot in My Paper">
+<meta name="twitter:description" content="Here is the script draw a figure in my paper. library(ggplot2)library(RColorBrewer) data &amp;lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)data$Batch &amp;lt;- as.character(data$Batch)data">
+<meta name="twitter:image" content="http://yoursite.com/Rplot07">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -125,174 +132,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Grouped-Barplot-in-My-Paper" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Grouped Barplot in My Paper
+    </h1>
+  
+
+        
+        <a href="/2017/06/23/Grouped-Barplot-in-My-Paper/" class="archive-article-date">
+  	<time datetime="2017-06-23T11:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Here is the script draw a figure in my paper.</p>
+<p><pre><br>library(ggplot2)<br>library(RColorBrewer)</pre></p>
+<p>data &lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)<br>data$Batch &lt;- as.character(data$Batch)<br>data$Batch &lt;- paste(“Batch “, data$Batch)<br>p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</p>
+<pre><code>+ geom_bar(stat = &apos;identity&apos;) + facet_wrap(~Batch, ncol = 5)
++ scale_fill_brewer(palette = &quot;Set3&quot;)
++ theme(legend.key.size = unit(0.5, &quot;cm&quot;)
++ theme(axis.text.x = element_blank())
++ theme(axis.ticks = element_blank())
++ guides(fill = guide_lengend((title = &quot;Sampling sites&quot;)))
++ scale_y_continuous(expand = c(0,0))
++ labs(x = &quot;Sampling sites&quot;)
+</code></pre><p><br>Here is the image:<br><img src="/Rplot07" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/" class="archive-article-date">
-  	<time datetime="2017-06-10T08:22:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/10/LeetCode-21-Merge-Two-Sorted-Lists/">LeetCode 21-Merge Two Sorted Lists</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Biology</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/06/LeetCode-50-Pow-x-n/" class="archive-article-date">
-  	<time datetime="2017-06-06T08:54:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/06/LeetCode-50-Pow-x-n/">LeetCode 50-Pow(x, n)</a>
-    </h1>
+  
+    <a href="/2017/06/21/Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Classification of Fungi and Protozoa-Traditonal and molecular</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/05/LeetCode-Remove-Element-27/" class="archive-article-date">
-  	<time datetime="2017-06-05T12:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/05/LeetCode-Remove-Element-27/">LeetCode 27-Remove Element</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" class="archive-article-date">
-  	<time datetime="2017-05-23T05:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">Leetcode: median of two sorted arrays</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -315,9 +237,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",

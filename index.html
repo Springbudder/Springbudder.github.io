@@ -127,6 +127,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Grouped-Barplot-in-My-Paper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/23/Grouped-Barplot-in-My-Paper/">Grouped Barplot in My Paper</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/23/Grouped-Barplot-in-My-Paper/" class="archive-article-date">
+  	<time datetime="2017-06-23T11:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Here is the script draw a figure in my paper.</p>
+<p><pre><br>library(ggplot2)<br>library(RColorBrewer)</pre></p>
+<p>data &lt;- read.csv(C:\Users\Huang\Desktop\my_data.csv”, header = TRUE)<br>data$Batch &lt;- as.character(data$Batch)<br>data$Batch &lt;- paste(“Batch “, data$Batch)<br>p &lt;- ggplot(data, aes(x = as.factor(Position), y = Positive, fill = as.factor(Position)))</p>
+<pre><code>+ geom_bar(stat = &apos;identity&apos;) + facet_wrap(~Batch, ncol = 5)
++ scale_fill_brewer(palette = &quot;Set3&quot;)
++ theme(legend.key.size = unit(0.5, &quot;cm&quot;)
++ theme(axis.text.x = element_blank())
++ theme(axis.ticks = element_blank())
++ guides(fill = guide_lengend((title = &quot;Sampling sites&quot;)))
++ scale_y_continuous(expand = c(0,0))
++ labs(x = &quot;Sampling sites&quot;)
+</code></pre><p><br>Here is the image:<br><img src="/Rplot07" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Biology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/23/Grouped-Barplot-in-My-Paper/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -694,67 +764,6 @@ __name__ == '__main__'
 
 
   
-    <article id="post-Python-Decorators-and-R-Functional-Programming" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/">Python Decorators and R Functional Programming</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/" class="archive-article-date">
-  	<time datetime="2017-06-04T11:58:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p></p><p><strong>Decorator</strong> is a very powerful feature in Python. It makes <b>functional programming</b> more convenient, albeit Python is not a much feasible option. Strictly, I think decorators is just a syntax sugar. Compared to R, functional programming implemented by my own with Python is less elegant and natural.</p><p></p>
-<p></p><p>Beside decorators, <code>lambda</code> expression is aimming at functional programmingas well as <code>apply</code> series function in R language.</p><p></p>
-<p><hr><br>For example, sort a linked lists:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">class ListNode(object):</div><div class="line">	def __init__(self, x):</div><div class="line">		self.val = x</div><div class="line">		self.next = None</div><div class="line">"""</div><div class="line">result = lists.sort(key = <span class="keyword">lambda</span> x:x.val)</div><div class="line"></div><div class="line"><span class="string">"""</span></div><div class="line">There are two way to sort: sort and sorted.</div><div class="line">sorted is a function, sort is a kind of attribute and it will change the object need to manipulate, but sorted will return a copy.</div><div class="line">"""</div><div class="line"><span class="comment"># Sort a dict</span></div><div class="line"><span class="comment"># Also can use OrderedDict function in the collections moduel</span></div><div class="line">dict = &#123;<span class="number">1</span>:<span class="string">'x'</span>, <span class="number">2</span>:<span class="string">'y'</span>, <span class="number">3</span>:<span class="string">'z'</span>&#125;</div><div class="line"><span class="keyword">print</span> sorted(dict.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>])</div><div class="line"></div></pre></td></tr></table></figure><br><br><details><summary>Need to fullfill…</summary><ul><li>Python</li><li>R</li></ul></details></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -872,15 +881,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Biology</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
