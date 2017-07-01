@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/07/01/Memory-management-in-R/index.html">
 <meta property="og:site_name" content="Springbudder">
 <meta property="og:description" content="Object sizeTo determin the size of a object in R, built-in function object_size() is an option. Alternatively, the function object_size() in the package pryr, which has the same name with that of in t">
-<meta property="og:updated_time" content="2017-07-01T04:08:28.370Z">
+<meta property="og:updated_time" content="2017-07-01T05:37:32.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Memory management in R">
 <meta name="twitter:description" content="Object sizeTo determin the size of a object in R, built-in function object_size() is an option. Alternatively, the function object_size() in the package pryr, which has the same name with that of in t">
@@ -155,7 +155,7 @@
 <ul>
 <li><b>Object metadata</b> (4 bytes). These metadata store the base type (e.g. integer) and information used for debugging and memory management.</li>
 <li><b>Two pointers</b>: one to the next object in memory and one to the previous object (2 * 8 bytes). This doubly-linked list makes it easy for internal R code to loop through every object in memory.</li>
-<li><b>A pointer to the attributes </b>(8 bytes).</li>
+<li><b>A pointer to the attributes </b>(8 bytes).<br><a href="http://adv-r.had.co.nz/memory.html#modification" target="_blank" rel="external">Reference</a></li>
 </ul>
 
       
