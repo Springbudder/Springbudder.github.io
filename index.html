@@ -148,41 +148,53 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="Determine-the-normality-of-the-dataset"><a href="#Determine-the-normality-of-the-dataset" class="headerlink" title="Determine the normality of the dataset"></a>Determine the normality of the dataset</h4><ol>
-<li><b>Histogram</b>&nbsp;&nbsp;Do your data resemble a bell-shaped curve?</li>
-<li><b>Normality Test</b>&nbsp;&nbsp;Is the p-value greater than your $\alpha$-level(e.g. $\alpha = 0.05$)?</li>
-<li><b>Probability Plot</b>&nbsp;&nbsp;Do the plotted points follow a straight line?<h4 id="Analyzing-Non-Normal-Data"><a href="#Analyzing-Non-Normal-Data" class="headerlink" title="Analyzing Non-Normal Data"></a>Analyzing Non-Normal Data</h4></li>
-<li><b>Nonparametrics</b>&nbsp;&nbsp;The main difference between parametric and nonparametric is the theretical base, for the parametric the base is mean, but for the nonparametric, the base is median. </li>
+<li><b>Histogram</b>&nbsp;&nbsp;&nbsp;&nbsp;Do your data resemble a bell-shaped curve?</li>
+<li><b>Normality Test</b>&nbsp;&nbsp;&nbsp;&nbsp;Is the p-value greater than your $\alpha$-level(e.g. $\alpha = 0.05$)?</li>
+<li><b>Probability Plot</b>&nbsp;&nbsp;&nbsp;&nbsp;Do the plotted points follow a straight line?<h4 id="The-reason-for-non-normality-of-data"><a href="#The-reason-for-non-normality-of-data" class="headerlink" title="The reason for non-normality of data"></a>The reason for non-normality of data</h4></li>
+</ol>
+<ul>
+<li>Sampled from different populations (locations, genders, seasons, etc.)</li>
+<li>Shift and drift over time.</li>
+<li>Contain extreme outliers.</li>
+<li>Have insufficient resolution (too few significant digits).<h4 id="Analyzing-Non-Normal-Data"><a href="#Analyzing-Non-Normal-Data" class="headerlink" title="Analyzing Non-Normal Data"></a>Analyzing Non-Normal Data</h4></li>
+</ul>
+<ol>
+<li><b>Nonparametrics</b>&nbsp;&nbsp;&nbsp;&nbsp;The main difference between parametric and nonparametric is the theretical base, for the parametric the base is <b><em>mean</em></b>, but for the nonparametric, the base is <b><em>median</em></b>. </li>
 </ol>
 <table>
 <thead>
 <tr>
-<th>Parametric Tests</th>
-<th>Nonparametric Tests</th>
+<th style="text-align:center">Parametric Tests</th>
+<th style="text-align:center">Nonparametric Tests</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1-Sample t</td>
-<td>1-Sample Sign or Wilcoxon</td>
+<td style="text-align:center">1-Sample t</td>
+<td style="text-align:center">1-Sample Sign or Wilcoxon</td>
 </tr>
 <tr>
-<td>2-Sample t</td>
-<td>Mann-Whitney</td>
+<td style="text-align:center">2-Sample t</td>
+<td style="text-align:center">Mann-Whitney</td>
 </tr>
 <tr>
-<td>One-Factor ANOVA</td>
-<td>Kruskal-Wallis or Mood</td>
+<td style="text-align:center">One-Factor ANOVA</td>
+<td style="text-align:center">Kruskal-Wallis or Mood</td>
 </tr>
 <tr>
-<td>Two-Factor ANOVA</td>
-<td>Friedman</td>
+<td style="text-align:center">Two-Factor ANOVA</td>
+<td style="text-align:center">Friedman</td>
 </tr>
 <tr>
-<td>Pearson Correlation</td>
-<td>Spearman Correlation</td>
+<td style="text-align:center">Pearson Correlation</td>
+<td style="text-align:center">Spearman Correlation</td>
 </tr>
 </tbody>
 </table>
+<ol>
+<li><b>Alternative Distributions</b>&nbsp;&nbsp;&nbsp;&nbsp;For example, Weibull and exponential distribution, just pick the most fitted model.</li>
+<li><b>Transformations</b>&gt;&nbsp;&nbsp;&nbsp;&nbsp;Like the transformation data in Machine Learning.</li>
+</ol>
 
       
 
