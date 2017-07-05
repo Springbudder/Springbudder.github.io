@@ -127,157 +127,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-A-raw-implement-of-Perceptron" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-前蒙古纪事本末卷上-蒙兀始基" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/26/A-raw-implement-of-Perceptron/">A raw implement of Perceptron</a>
+      <a class="article-title" href="/2017/06/06/前蒙古纪事本末卷上-蒙兀始基/">前蒙古纪事本末卷上-蒙兀始基</a>
     </h1>
   
 
         
-        <a href="/2017/05/26/A-raw-implement-of-Perceptron/" class="archive-article-date">
-  	<time datetime="2017-05-26T14:44:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
+        <a href="/2017/06/06/前蒙古纪事本末卷上-蒙兀始基/" class="archive-article-date">
+  	<time datetime="2017-06-06T13:46:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><p>The perceptron classified the two Iris flower classes perfectly, <b>convergence</b> is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:</p>
-<blockquote>
-<p>the perceptron learning rule converges if the two classes can be separated by a linear hyperplane. </p>
-</blockquote>
-<p>However, if classes cannot be separated perfectly by such a linear decision boundary, the weights will never stop updating unless we set a maximum number of <b>epochs</b>.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Perceptron</span><span class="params">(object)</span>:</span></div><div class="line">   <span class="string">"""</span></div><div class="line">   Perceptron classifier.</div><div class="line">   </div><div class="line">   </div><div class="line">   Parameters</div><div class="line">   ---------------------------</div><div class="line">   eta: float</div><div class="line">       Learning rate (between 0.0 and 1.0)</div><div class="line">       </div><div class="line">   n_iter: int</div><div class="line">       Passes over the traning dataset</div><div class="line">       </div><div class="line">       </div><div class="line">       </div><div class="line">   Attributes    </div><div class="line">   ---------------------------</div><div class="line">   w_: 1d-array</div><div class="line">       Weights after fitting</div><div class="line">   </div><div class="line">   errors_: list</div><div class="line">       Number of misclassification in every epoch</div><div class="line">   </div><div class="line">   """</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, eta = <span class="number">0.01</span>, n_iter = <span class="number">10</span>)</span>:</span></div><div class="line">       self.eta = eta</div><div class="line">       self.n_iter = n_iter</div><div class="line">       </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self, X, y)</span>:</span>       </div><div class="line">       <span class="string">"""</span></div><div class="line">       fit the traning data</div><div class="line">       </div><div class="line">       Parameters</div><div class="line">       ----------------------------</div><div class="line">       X: &#123;array-like&#125;, shape = [n_sample, n_features]</div><div class="line">           Training vectors, where n_samples is the number of samples and </div><div class="line">           n_features is the number of features</div><div class="line">           </div><div class="line">       y: array-like, shape = [n_samples]</div><div class="line">           Target values.</div><div class="line">           </div><div class="line">           </div><div class="line">       Returns</div><div class="line">       ----------------------------</div><div class="line">       self: object</div><div class="line">       </div><div class="line">       """</div><div class="line">       self.w_ = np.zeros(<span class="number">1</span> + X.shape[<span class="number">1</span>])</div><div class="line">       self.errors_ = []</div><div class="line">       </div><div class="line">       <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n_iter):</div><div class="line">           errors = <span class="number">0</span></div><div class="line">           <span class="keyword">for</span> xi, target <span class="keyword">in</span> zip(X, y):</div><div class="line">               update = self.eta * (target - self.predict(xi))</div><div class="line">               self.w_[<span class="number">1</span>:] += update * xi</div><div class="line">               self.w_[<span class="number">0</span>] += update</div><div class="line">               errors += int(update != <span class="number">0.0</span>)</div><div class="line">               </div><div class="line">           self.errors_.append(errors)    </div><div class="line">       <span class="keyword">return</span> self</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">net_input</span><span class="params">(self, X)</span>:</span></div><div class="line">       <span class="string">"""</span></div><div class="line">       Calculate net input</div><div class="line">       """</div><div class="line">       <span class="keyword">return</span> np.dot(X, self.w_[<span class="number">1</span>:] + self.w_[<span class="number">0</span>])</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, X)</span>:</span></div><div class="line">       <span class="string">"""</span></div><div class="line">       Return class label after unit step</div><div class="line">       """</div><div class="line">       <span class="keyword">return</span> np.where(self.net_input(X) &gt;= <span class="number">0.0</span>, <span class="number">1</span>, <span class="number">-1</span>)</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/26/A-raw-implement-of-Perceptron/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Leetcode-median-of-two-sorted-arrays" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+        <p>&emsp;&emsp;相传，古时蒙兀与他族战，全军覆没。仅遗男女各二人，遁入一山，斗绝险巇，惟一径通出入，而山中壤地宽平，水草茂美。乃携牲畜辎重往居，名其山曰阿儿格乃衮。二男，一名脑古，一名乞颜。<br>&emsp;&emsp;乞颜，义为奔瀑急流，以其膂力迈众，一往无前，故以称名。后世地狭人稠，乃谋出山。而旧径芜塞，且苦艰险。继得铁矿，洞穴深邃，爰伐木炽炭，篝火穴中。宰七十牛，剖革为筒。鼓风助火，铁石尽镕，衢路遂辟。后裔于元旦锻铁为炉，君与宗亲，次第捶之，著为典礼。<br>&emsp;&emsp;朵奔巴延居于斡难、克鲁伦、土拉之河发源地之不儿罕哈勒敦山。<br>&emsp;&emsp;土敦迈宁生九子而卒。其妻莫奴伦，亦称莫奴伦塔儿衮，义谓有力。居于诺赛儿吉及黑山之地，畜牧饶富。每登山以观，牲畜遍野，顾而乐之。<br>&emsp;&emsp;时有札剌亦儿部，居克鲁伦河滨，以车为阑，每一千车为一库伦，共有库伦七十。常恃其众与乞䚟战争。乞䚟遣大军至，札剌亦儿人藐视之，隔河而招，速请过河取我牲畜。然乞䚟军盛，束筏渡河，大败其众，俘戮无算。有败众以七十车载老幼，逃至莫奴伦牧地。饥困，掘速都逊草根为食。以是地多坎窞，莫奴伦见之，谓我子之牧地，何得践扰。以是致争鬬，莫奴伦及其八子皆被害。幼子海都之伯叔纳臣，娶肯布特氏女，居妇家。闻难来视，则惟海都被匿得免。其后，率族众攻札剌亦儿人，取为奴仆。海奴迁于巴儿忽真土窟姆，为蒙兀之外界，造路于河上通往来，名曰海都赤拉勒海。纳臣则居于斡难河。
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">Leetcode: median of two sorted arrays</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/" class="archive-article-date">
-  	<time datetime="2017-05-23T05:16:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Something interesting.</p>
-<p>When I try to figure out this quesion in Leetcode with C++, I found it was a little bit complicated. If you would not like to use the standard library, given the complexity of algorithm restriction, perhapes binary methods were best option. In this scenario, coding was tedious and the program was not roubust. </p>
-<p>Fortunately, Python is available. Even though Python is a scipt language, it is more elegant, easier to understand compared to god damn C++. On the other hand, C++ standard library is convineient as well, but once it be used, our original ideal derailed obviously, since show off matters a lot. </p>
-<p>Now get to business:<br><figure class="highlight python"><figcaption><span>Python</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">findMedianSortedArrays</span><span class="params">(self, nums1, nums2)</span>:</span></div><div class="line">    	<span class="string">"""</span></div><div class="line">    	:type nums1: List[int]</div><div class="line">    	:type nums2: List[int]</div><div class="line">    	:rtype: float</div><div class="line">    	"""</div><div class="line">    	<span class="keyword">for</span> item <span class="keyword">in</span> nums2:</div><div class="line">       		nums1.append(item)</div><div class="line">    </div><div class="line">    	temp = sorted(nums1)</div><div class="line">    	length = len(temp)</div><div class="line">    </div><div class="line">    	<span class="keyword">if</span> (length % <span class="number">2</span> == <span class="number">0</span>):</div><div class="line">        	<span class="keyword">return</span> (temp[length/<span class="number">2</span> - <span class="number">1</span>] + temp[length/<span class="number">2</span>]) * <span class="number">1.0</span> / <span class="number">2</span></div><div class="line">    	<span class="keyword">else</span>:</div><div class="line">        	<span class="keyword">return</span> temp[(length - <span class="number">1</span>) / <span class="number">2</span>]`</div><div class="line"></div></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/23/Leetcode-median-of-two-sorted-arrays/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-太祖称汗" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/22/太祖称汗/">《蒙古纪事本末》 - 太祖称汗</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/22/太祖称汗/" class="archive-article-date">
-  	<time datetime="2017-05-22T10:20:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="太祖称汗"><a href="#太祖称汗" class="headerlink" title="太祖称汗"></a>太祖称汗</h3><p></p><p>鼠年，太祖五十岁，平乃蛮。</p><p></p>
-<p></p><p>虎年，大会部族于斡难河，建九脚白旗，即皇帝位，群下共上尊号曰：「成吉思汗。」从阔阔出之请也。</p><p></p>
-<p></p><p>阔阔出，晃豁坛氏，蒙力克额赤格之子，好言休咎，形如狂，众称之曰帖卜腾格里。其人似有前知，冬令极寒时，裸体而行，大呼于途，谓闻天语，将畀帖木真以天下，其称号为成吉思，「成」为「坚强」之义，「吉思」为「众数」。亦由哈剌契丹之称「古尔汗」。「古尔」，「普」也，「古尔汗」，「众汗之汗」也。当汪罕灭后，阔阔出即创此论，至此年即位，即宋甯宗开禧二年，丙寅岁也。</p><p></p>
-<p></p><p>盖以「古尔汗」曾为扎木合窃号，不渝时即败，故废「古尔汗」不称，而从阔阔出之言，称「成吉思汗」云。</p><br>
-        
-          <a class="article-more-a" href="/2017/05/22/太祖称汗/#more">more >></a>
+          <a class="article-more-a" href="/2017/06/06/前蒙古纪事本末卷上-蒙兀始基/#more">more >></a>
         
       
 
@@ -301,7 +173,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/22/太祖称汗/">read more... >></a>
+          <a class="article-more-a" href="/2017/06/06/前蒙古纪事本末卷上-蒙兀始基/">read more... >></a>
         </p>
       
 
@@ -316,29 +188,147 @@
 
 
   
-    <article id="post-Iterative-features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-LeetCode-50-Pow-x-n" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/21/Iterative-features-selection/">Iterative features selection</a>
+      <a class="article-title" href="/2017/06/06/LeetCode-50-Pow-x-n/">LeetCode 50-Pow(x, n)</a>
     </h1>
   
 
         
-        <a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+        <a href="/2017/06/06/LeetCode-50-Pow-x-n/" class="archive-article-date">
+  	<time datetime="2017-06-06T08:54:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Forward-and-Backward"><a href="#Forward-and-Backward" class="headerlink" title="Forward and Backward"></a>Forward and Backward</h4><p></p><p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p><p></p>
-<p></p><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><br><b>It is very time consuming.</b><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">Part of the code.</div><div class="line">Just to show the application of RFE model selection.</div><div class="line">"""</div><div class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE</div><div class="line"><span class="keyword">from</span> sklean.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"></div><div class="line">select = RFE(RandomForestClassifier(n_estimators = <span class="number">100</span>, random_state = <span class="number">42</span>), n_features_to_select = <span class="number">40</span>)select.fit(X_train, y_train)</div><div class="line">X_train_rfe = select.transform(X_train)</div><div class="line">X_test_rfe = select.transform(X_test)</div><div class="line">score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Test score: &#123;:.3f&#125;"</span>.format(score)</div><div class="line">Test score: <span class="number">0.951</span></div></pre></td></tr></table></figure><p></p>
+        <p><details><summary>Question description:</summary>Implement <code>pow(x, n)</code>.</details><br>C++ Version<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line">	<span class="keyword">public</span>:</div><div class="line">    	<span class="function"><span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        	<span class="keyword">if</span> (x == <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span>)</div><div class="line">            	<span class="keyword">return</span> <span class="literal">NULL</span>;</div><div class="line">        	<span class="keyword">if</span> (x != <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span>)</div><div class="line">            	<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        	<span class="keyword">if</span> (n &gt; <span class="number">0</span>)</div><div class="line">            	<span class="keyword">return</span> my_pow(x, n);</div><div class="line">        	<span class="keyword">return</span> <span class="number">1</span> / my_pow(x, -n);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    	<span class="function"><span class="keyword">double</span> <span class="title">my_pow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        	<span class="keyword">if</span> (n == <span class="number">0</span>)</div><div class="line">            	<span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        	<span class="keyword">double</span> half = my_pow(x, n / <span class="number">2</span>);</div><div class="line">        	<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>)</div><div class="line">            	<span class="keyword">return</span> half * half;</div><div class="line">        	<span class="keyword">return</span> half * half * x;</div><div class="line">    	&#125;</div><div class="line">&#125;;	</div></pre></td></tr></table></figure><br>Python Version<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">myPow</span><span class="params">(self, x, n)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type x: float</div><div class="line">        :type n: int</div><div class="line">        :rtype: float</div><div class="line">        """</div><div class="line">        <span class="keyword">if</span> x == <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="keyword">None</span></div><div class="line">        <span class="keyword">if</span> x != <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> <span class="number">1</span></div><div class="line">        </div><div class="line">        <span class="function"><span class="keyword">def</span> <span class="title">my_pow</span><span class="params">(x, n)</span>:</span> </div><div class="line">            <span class="keyword">if</span> n == <span class="number">0</span>:</div><div class="line">                <span class="keyword">return</span> <span class="number">1</span></div><div class="line">            half = my_pow(x, n / <span class="number">2</span>)</div><div class="line">            <span class="keyword">if</span> n % <span class="number">2</span> == <span class="number">0</span>:</div><div class="line">                <span class="keyword">return</span> half * half</div><div class="line">            <span class="keyword">return</span> half * half * x</div><div class="line">        <span class="keyword">if</span> n &gt; <span class="number">0</span>:</div><div class="line">            <span class="keyword">return</span> my_pow(x, n)</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span> / my_pow(x, -n)	</div></pre></td></tr></table></figure></p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/06/LeetCode-50-Pow-x-n/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-LeetCode-Remove-Element-27" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/05/LeetCode-Remove-Element-27/">LeetCode 27-Remove Element</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/05/LeetCode-Remove-Element-27/" class="archive-article-date">
+  	<time datetime="2017-06-05T12:14:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Given an array and a value, remove all instances of that value in place and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.<br>The order of elements can be changed. It doesn’t matter what you leave beyond the new length.<br><details><summary>Example:</summary><br>Given input array <code>nums = [3,2,2,3]</code>, <code>val = 3</code>.<br>Your function should return <code>length = 2</code>, with the first two elements of nums being <code>2</code>.</details><br>C++ Version<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line">	<span class="keyword">public</span>:</div><div class="line">    	<span class="function"><span class="keyword">int</span> <span class="title">removeElement</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> val)</span> </span>&#123;</div><div class="line">        	<span class="keyword">int</span> head = <span class="number">0</span>;</div><div class="line">        	<span class="keyword">int</span> tail = nums.size();</div><div class="line">        	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tail; i++) &#123;</div><div class="line">            	<span class="keyword">if</span> (nums[i] != val)</div><div class="line">                	nums[head++] = nums[i];</div><div class="line">        	&#125;</div><div class="line">        	<span class="keyword">return</span> head;</div><div class="line">    	&#125;</div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure><br>Python Version<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></div><div class="line">	<span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></div><div class="line">        <span class="string">"""</span></div><div class="line">        :type nums: List[int]</div><div class="line">        :type val: int</div><div class="line">        :rtype: int</div><div class="line">        """</div><div class="line">		head = <span class="number">0</span></div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</div><div class="line">            <span class="keyword">if</span> (nums[i] != val):</div><div class="line">                nums[head] = nums[i]</div><div class="line">                head += <span class="number">1</span></div><div class="line">        <span class="keyword">return</span> head	</div></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/05/LeetCode-Remove-Element-27/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Python-Decorators-and-R-Functional-Programming" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/">Python Decorators and R Functional Programming</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/" class="archive-article-date">
+  	<time datetime="2017-06-04T11:58:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p><strong>Decorator</strong> is a very powerful feature in Python. It makes <b>functional programming</b> more convenient, albeit Python is not a much feasible option. Strictly, I think decorators is just a syntax sugar. Compared to R, functional programming implemented by my own with Python is less elegant and natural.</p><p></p>
+<p></p><p>Beside decorators, <code>lambda</code> expression is aimming at functional programmingas well as <code>apply</code> series function in R language.</p>For example, sort a linked lists:<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">class ListNode(object):</div><div class="line">	def __init__(self, x):</div><div class="line">		self.val = x</div><div class="line">		self.next = None</div><div class="line">"""</div><div class="line">result = lists.sort(key = <span class="keyword">lambda</span> x:x.val)</div><div class="line"><span class="string">"""</span></div><div class="line">There are two way to sort: sort and sorted.</div><div class="line">sorted is a function, sort is a kind of attribute and it will change the object need to manipulate, but sorted will return a copy.</div><div class="line">"""</div><div class="line"><span class="comment"># Sort a dict</span></div><div class="line"><span class="comment"># Also can use OrderedDict function in the collections moduel</span></div><div class="line">dict = &#123;<span class="number">1</span>:<span class="string">'x'</span>, <span class="number">2</span>:<span class="string">'y'</span>, <span class="number">3</span>:<span class="string">'z'</span>&#125;</div><div class="line"><span class="keyword">print</span> sorted(dict.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>])</div></pre></td></tr></table></figure><p></p>
+<details><summary>Need to fullfill…</summary><ul><li>Python</li><li>R</li></ul></details>
       
 
       
@@ -361,7 +351,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/21/Iterative-features-selection/">read more... >></a>
+          <a class="article-more-a" href="/2017/06/04/Python-Decorators-and-R-Functional-Programming/">read more... >></a>
         </p>
       
 
@@ -376,304 +366,41 @@
 
 
   
-    <article id="post-Data-encoding-and-Features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-A-cd-trick" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/20/Data-encoding-and-Features-selection/">Data encoding and Features selection</a>
+      <a class="article-title" href="/2017/06/04/A-cd-trick/">cmd tricks and make the hexo reuseful in another PC</a>
     </h1>
   
 
         
-        <a href="/2017/05/20/Data-encoding-and-Features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-20T12:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
+        <a href="/2017/06/04/A-cd-trick/" class="archive-article-date">
+  	<time datetime="2017-06-04T11:44:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Representing-Data-and-Engineering-Features"><a href="#Representing-Data-and-Engineering-Features" class="headerlink" title="Representing Data and Engineering Features"></a>Representing Data and Engineering Features</h3><h4 id="Categorical-Data"><a href="#Categorical-Data" class="headerlink" title="Categorical Data"></a>Categorical Data</h4><ul>
-<li>One-Hot-Encoding (Dummy Variables)</li>
-</ul>
-<p>Dummy Varibles is quite straight-forward, for n features, different samples have different features. We can specify the feature that the samples embeded as 1, none as 0.<br><br><br><b>Note</b>: Dummy variables in machine learning differ from the statistics. In the later field, we denotes the dummy variable in the number ranged from 0 to n-1, n is the numbers of features. Why we should encode the dummy  variable in 0 and 1? <b>To avoid data matrix rank deficient.</b></p>
-<ul>
-<li>Binning, Discretization, Linear Models, and Trees</li>
-</ul>
-<p>Though bins is relatively powerful in linear regression, tree based methods seems more powerful than linear models. If there are some reasons we must used linear regression, then it will be <b>large datasize</b> and <b>tremendous features</b>. Besides, <b>expannation demands</b> also could be an alternative.</p>
-<hr>
-
-<h4 id="Automatical-Feature-selection"><a href="#Automatical-Feature-selection" class="headerlink" title="Automatical Feature selection"></a>Automatical Feature selection</h4><ul>
-<li>Univariate statistics</li>
-<li>Model based selection</li>
-<li>Iterative selection</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/20/Data-encoding-and-Features-selection/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-k-Means-DBSCAN-and-agglomerative-clustring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">k-Means, DBSCAN and agglomerative clustring</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/" class="archive-article-date">
-  	<time datetime="2017-05-20T07:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Cluatering-methods"><a href="#Cluatering-methods" class="headerlink" title="Cluatering methods"></a>Cluatering methods</h3><ul>
-<li><b><em>k</em>-Means</b></li>
-<li><b>Agglomerative clustering</b></li>
-<li><b>DBSCAN</b></li>
-</ul>
-<p><br>of the methods above, <b><em>k</em>-Means</b> and <b>Agglomerative clustering</b> allows to specify the number of desired clusters, while <b>DBSCAN</b> indirectly influences cluster sizes with the parameter <b><em>eps</em></b>.<br></p>
-
-
-<p><br><b><em>k</em>-Means</b> can be viewed as dimentionality reduction method, since one cluster can be represented by th mean data. <b>DBSCAN</b> could be used for looking outliers and the main advantage is it can be applied in the complex shapes, for example, two_moons datasets. In addition, <b>Agglomerative clustering</b> could give us a more recognizable dendrogram, which is similar to the dicision tree, quit understandable to the unexperts.<br></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Something-about-t-SNE" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/20/Something-about-t-SNE/">Something about t-SNE</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/20/Something-about-t-SNE/" class="archive-article-date">
-  	<time datetime="2017-05-19T19:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>It takes 6 hours to had the bug fixed.</p>
-<p>This is a test file, just verifies the functions of the page.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/20/Something-about-t-SNE/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Why-we-need-scaling" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/19/Why-we-need-scaling/">Why we need scaling?</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/19/Why-we-need-scaling/" class="archive-article-date">
-  	<time datetime="2017-05-19T12:49:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Explanantion-1"><a href="#Explanantion-1" class="headerlink" title="Explanantion 1:"></a>Explanantion 1:</h4><p>Scaling before applying SVM is very important. Part 2 of Sarle’s Neural Networks FAQ Sarle (1997) explains the importance of this and most of considerations also apply to SVM. The main advantage of scaling is <b>to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges</b>. Another advantage is <b>to avoid numerical difficulties during the calculation</b>. Because kernel values usually depend on the inner products of feature vectors, e.g. the linear kernel and the polynomial kernel, large attribute values might cause numerical problems. We recommend linearly scaling each attribute to the range [−1, +1] or [0, 1].</p>
-
-<p>Of course we have to use the same method to scale both training and testing data. For example, suppose that we scaled the first attribute of training data from [−10, +10] to [−1, +1]. If the first attribute of testing data lies in the range [−11, +8], we must scale the testing data to [−1.1, +0.8]. See Appendix B for some real examples.</p>
-
-<p><a href="http://www.csie.ntu.edu.tw/~cjlin/papers/guide/guide.pdf" target="_blank" rel="external">Reference of Explanantion 1</a></p>
-<h4 id="Explanantion-2"><a href="#Explanantion-2" class="headerlink" title="Explanantion 2:"></a>Explanantion 2:</h4><ul>
-<li>Remember the kernel trick used in SVMs depends on inner products between training examples. If one component is much larger than the others, then it will affect the inner product more than the others, which means the classifier won’t care about most of the other features.</li>
-<li>Any svm solver runs a numerical optimization and it is necessary to estimate the step size it takes to reach convergence.   If the step size is too small, the solver will take forever to reach the global minimum.  If it is too big, it will get close fast but then oscillate around the global minimum.  The step size needs to be in some unit of measurement, and this unit is  normalized by looking at the volume of the data set, such as a ball  bounding the entire set of points.</li>
-</ul>
-<p><a href="https://www.quora.com/Why-scaling-is-important-for-the-linear-SVM-classification" target="_blank" rel="external">Reference of Explanantion 2</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/19/Why-we-need-scaling/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Hyperparameters-tunning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/Hyperparameters-tunning/">Hyperparameters tunning</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/06/Hyperparameters-tunning/" class="archive-article-date">
-  	<time datetime="2017-01-05T16:52:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Tuning-hyperparameters"><a href="#Tuning-hyperparameters" class="headerlink" title="Tuning hyperparameters"></a>Tuning hyperparameters</h3><ol>
-<li>Determing the range of parameters<ol>
-<li>Reading papers</li>
-<li>Anchor one parameter that can use</li>
-<li>Try others</li>
-</ol>
+        <h4 id="cd-command"><a href="#cd-command" class="headerlink" title="cd command"></a><em><code>cd</code></em> command</h4><p>when cmd firstly initialized, the default working path would be as the follow:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\&gt; C:/Users/Myname</div></pre></td></tr></table></figure></p>
+<p>But the path that I prefered was<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">\&gt; C:/Project</div></pre></td></tr></table></figure></p>
+<p>Several approaches for this issue are as follows:<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">\&gt; cd ../../Project</div><div class="line">  C:/Project</div><div class="line">\&gt; cd /Project</div><div class="line">  C:/Project</div></pre></td></tr></table></figure></p>
+<h4 id="start’-command"><a href="#start’-command" class="headerlink" title="`start’ command"></a><em>`start’</em> command</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">\&gt; C:/Hexo</div><div class="line">\&gt; Start .</div></pre></td></tr></table></figure>
+<p>Windows file manager will be executed.</p>
+<h4 id="reboot-Hexo-in-another-PC"><a href="#reboot-Hexo-in-another-PC" class="headerlink" title="reboot Hexo in another PC"></a>reboot Hexo in another PC</h4><blockquote>
+<p>Just remove the <code>module</code> folder</p>
+</blockquote>
+<h5 id="Excel-tricks"><a href="#Excel-tricks" class="headerlink" title="Excel tricks"></a>Excel tricks</h5><ul>
+<li><p>Percentage</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Just <span class="string">"&amp;"</span> them, hahaha...</div></pre></td></tr></table></figure>
 </li>
-<li>Plotting</li>
-<li>Grid search(SVM, RandomForest) and Bayesian optimization(complicated model)</li>
-</ol>
+<li><p>Reverse</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Just labeled them <span class="keyword">with</span> <span class="built_in">number</span>, <span class="keyword">then</span> reversed <span class="keyword">the</span> <span class="built_in">number</span> expasionally.</div></pre></td></tr></table></figure></li>
+</ul>
 
       
 
@@ -687,7 +414,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">System/Windows</a>
         		</li>
       		
 		</ul>
@@ -697,56 +424,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/06/Hyperparameters-tunning/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Issues-about-machine-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/02/Issues-about-machine-learning/">Issues about machine learning</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/02/Issues-about-machine-learning/" class="archive-article-date">
-  	<time datetime="2017-01-01T17:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Yesterday, I read a blog in Wechat that talks about the trend of bioinformatic in 2017. It seems that machine learning will be more and more important in acadimia or insustry. Since I have learned the theory and applications of machine learning for more than two years, so I was pretty delight hearing this news.</p>
-<p>In the passed two weeks…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/02/Issues-about-machine-learning/">read more... >></a>
+          <a class="article-more-a" href="/2017/06/04/A-cd-trick/">read more... >></a>
         </p>
       
 
@@ -763,7 +441,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -906,11 +584,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
               </li>
             
             <div class="clearfix"></div>
