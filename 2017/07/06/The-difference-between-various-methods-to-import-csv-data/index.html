@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Springbudder</title>
+  <title>The difference between various methods to import csv data | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Springbudder">
-<meta property="og:url" content="http://yoursite.com/archives/page/6/index.html">
+  <meta name="description" content="Data import methodsThere are several ways to import a csv data, which the most convinient format data into our workspace. Here are the methods:1234567891011121314151617# The base methodread.csv(&apos;../da">
+<meta name="keywords" content="R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The difference between various methods to import csv data">
+<meta property="og:url" content="http://yoursite.com/2017/07/06/The-difference-between-various-methods-to-import-csv-data/index.html">
 <meta property="og:site_name" content="Springbudder">
+<meta property="og:description" content="Data import methodsThere are several ways to import a csv data, which the most convinient format data into our workspace. Here are the methods:1234567891011121314151617# The base methodread.csv(&apos;../da">
+<meta property="og:image" content="https://csgillespie.github.io/efficientR/_main_files/figure-html/readr-vs-base-1.png">
+<meta property="og:updated_time" content="2017-07-06T05:34:46.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Springbudder">
+<meta name="twitter:title" content="The difference between various methods to import csv data">
+<meta name="twitter:description" content="Data import methodsThere are several ways to import a csv data, which the most convinient format data into our workspace. Here are the methods:1234567891011121314151617# The base methodread.csv(&apos;../da">
+<meta name="twitter:image" content="https://csgillespie.github.io/efficientR/_main_files/figure-html/readr-vs-base-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Springbudder" type="application/atom+xml">
   
@@ -125,215 +132,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-The-difference-between-various-methods-to-import-csv-data" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      The difference between various methods to import csv data
+    </h1>
+  
+
+        
+        <a href="/2017/07/06/The-difference-between-various-methods-to-import-csv-data/" class="archive-article-date">
+  	<time datetime="2017-07-06T05:18:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Data-import-methods"><a href="#Data-import-methods" class="headerlink" title="Data import methods"></a>Data import methods</h4><p>There are several ways to import a csv data, which the most convinient format data into our workspace. Here are the methods:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># The base method</span></div><div class="line">read.csv(<span class="string">'../data/my_data.csv'</span>, header = <span class="literal">T</span>)</div><div class="line"></div><div class="line"><span class="comment"># fread in the data.table package</span></div><div class="line">fread(<span class="string">'../data/my_data.csv'</span>, header = <span class="literal">T</span>, sep = <span class="string">','</span>)</div><div class="line"></div><div class="line"><span class="comment"># read_csv in readr package</span></div><div class="line">read_csv(<span class="string">'../data/my_data.csv'</span>, header = <span class="literal">T</span>)</div><div class="line"></div><div class="line"><span class="comment"># read.big.matrix in bigmemory package</span></div><div class="line">read.big.matrix(<span class="string">'../data/my_data.csv'</span>, header = <span class="literal">T</span>)</div><div class="line"></div><div class="line"><span class="comment"># read.csv.ffdf in ff package</span></div><div class="line">read.csv.ffdf(file = <span class="string">'../my_data/my_data.csv'</span>, header = <span class="literal">T</span>)</div><div class="line"></div><div class="line"><span class="comment">#read.csv.sql in sqldf package</span></div><div class="line">read.csv.sql(<span class="string">'../data/my_data.csv'</span>)</div></pre></td></tr></table></figure></p>
+<p>In the methods above, the fastest way is fread and read_csv. This is the benchmark of these method.<br><a href="https://www.r-bloggers.com/efficiency-of-importing-large-csv-files-in-r/" target="_blank" rel="external">Click me</a><br>Among these five methods, the read.csv in base, read_csv in readr, fread in data.table are more important. Here is the figure describe the efficiency:<br><img src="https://csgillespie.github.io/efficientR/_main_files/figure-html/readr-vs-base-1.png" alt="">Therefore, I think readr is my first option.<br>Except the advantage of readr, compared to read.csv in base, less robustness is disadvantage for the readr package. Hope I would not deal with the big data.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/21/Iterative-features-selection/">Iterative features selection</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/Data-encoding-and-Features-selection/" class="archive-article-date">
-  	<time datetime="2017-05-20T12:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/Data-encoding-and-Features-selection/">Data encoding and Features selection</a>
-    </h1>
+  
+    <a href="/2017/07/05/Analyzing-Non-Normal-Data/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Analyzing Non-Normal Data</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/" class="archive-article-date">
-  	<time datetime="2017-05-20T07:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">k-Means, DBSCAN and agglomerative clustring</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/20/Something-about-t-SNE/" class="archive-article-date">
-  	<time datetime="2017-05-19T19:30:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/20/Something-about-t-SNE/">Something about t-SNE</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/19/Why-we-need-scaling/" class="archive-article-date">
-  	<time datetime="2017-05-19T12:49:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/19/Why-we-need-scaling/">Why we need scaling?</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SVM</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/5/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/7/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -357,8 +227,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
