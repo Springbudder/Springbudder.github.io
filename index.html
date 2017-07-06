@@ -147,14 +147,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre class="r"><code class="r"><span class="operator">&gt;</span> <span class="comment"># Prepare and tranform the data</span>
-<span class="operator">&gt;</span> <span class="keyword">library</span><span class="paren">(</span><span class="identifier">dplyr</span><span class="paren">)</span>
-<span class="operator">&gt;</span> <span class="identifier">mydf</span> <span class="operator">&lt;-</span> <span class="identifier">read.csv</span><span class="paren">(</span><span class="string">"C:\\Users\\Huang\\Desktop\\my_swirl.csv"</span>, <span class="identifier">stringsAsFactors</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span>
-<span class="operator">&gt;</span> <span class="identifier">cran</span> <span class="operator">=</span> <span class="identifier">tbl_df</span><span class="paren">(</span><span class="identifier">mydf</span><span class="paren">)</span> 
-<span class="operator">&gt;</span> <span class="comment"># group_by() parameters: data, variable1, [variable2, ...]</span>
-<span class="operator">&gt;</span> <span class="comment"># Here we use the package vcriable</span>
-<span class="operator">&gt;</span> <span class="identifier">by_package</span> <span class="operator">&lt;-</span> <span class="identifier">group_by</span><span class="paren">(</span><span class="identifier">cran</span>, <span class="identifier">package</span><span class="paren">)</span> <span class="comment"># Note: assignment use "&lt;-" instead "="</span>
-<span class="operator">&gt;</span> <span class="identifier">by_package</span></code></pre>
+        <p><pre class="r"><code class="r"><span class="operator">&gt;</span> <span class="comment"># Prepare and tranform the data</span><br><span class="operator">&gt;</span> <span class="keyword">library</span><span class="paren">(</span><span class="identifier">dplyr</span><span class="paren">)</span><br><span class="operator">&gt;</span> <span class="identifier">mydf</span> <span class="operator">&lt;-</span> <span class="identifier">read.csv</span><span class="paren">(</span><span class="string">“C:\Users\Huang\Desktop\my_swirl.csv”</span>, <span class="identifier">stringsAsFactors</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span><br><span class="operator">&gt;</span> <span class="identifier">cran</span> <span class="operator">=</span> <span class="identifier">tbl_df</span><span class="paren">(</span><span class="identifier">mydf</span><span class="paren">)</span><br><span class="operator">&gt;</span> <span class="comment"># group_by() parameters: data, variable1, [variable2, …]</span><br><span class="operator">&gt;</span> <span class="comment"># Here we use the package vcriable</span><br><span class="operator">&gt;</span> <span class="identifier">by_package</span> <span class="operator">&lt;-</span> <span class="identifier">group_by</span><span class="paren">(</span><span class="identifier">cran</span>, <span class="identifier">package</span><span class="paren">)</span> <span class="comment"># Note: assignment use “&lt;-“ instead “=”</span><br><span class="operator">&gt;</span> <span class="identifier">by_package</span></code></pre><br>Seems nothing works. I need to find another way…</p>
+
       
 
       
@@ -625,15 +619,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +651,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
             
             <div class="clearfix"></div>
