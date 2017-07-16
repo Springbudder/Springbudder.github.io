@@ -127,6 +127,65 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Grouped-Barplot-in-My-Paper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/23/Grouped-Barplot-in-My-Paper/">Grouped Barplot in My Paper</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/23/Grouped-Barplot-in-My-Paper/" class="archive-article-date">
+  	<time datetime="2017-06-23T11:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf" target="_blank" rel="external">1. Very impressive cheetsheet</a><br><a href="http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html" target="_blank" rel="external">2. Instruction of barplots: A good blog</a><br>Here is the script draw a figure in my paper.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(ggplot2)</div><div class="line"><span class="keyword">library</span>(dplyr)</div><div class="line"></div><div class="line">mydata &lt;- read.csv(<span class="string">"C:\\Users\\Huang\\Desktop\\Books\\my_data.csv"</span>, header = <span class="literal">TRUE</span>, stringsAsFactors = <span class="literal">FALSE</span>)</div><div class="line">mydf &lt;- tbl_df(mydata)</div><div class="line"></div><div class="line">p &lt;- ggplot(mydf, aes(x = sites, y = ratio, fill = as.factor(sites)))+</div><div class="line">    geom_bar(stat = <span class="string">"identity"</span>)+</div><div class="line">    facet_wrap(~Batch, ncol = <span class="number">5</span>)+</div><div class="line">    scale_fill_brewer(palette = <span class="string">"Set3"</span>)+</div><div class="line">    theme(legend.key.size = unit(<span class="number">0.6</span>, <span class="string">"cm"</span>))+</div><div class="line">    theme(axis.text.x = element_blank())+</div><div class="line">    theme(axis.ticks = element_blank())+</div><div class="line">    guides(fill = guide_legend(title = <span class="string">"Sampling sites"</span>))+</div><div class="line">    scale_y_continuous(expand = c(<span class="number">0</span>, <span class="number">0</span>))+</div><div class="line">    labs(x = <span class="string">"Sampling sites"</span>, y = <span class="string">"Positive ratio (%)"</span>)</div><div class="line">p</div></pre></td></tr></table></figure><br>Here is the image:<br><img src="https://ooo.0o0.ooo/2017/06/23/594d037c92cd9.jpeg" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Biology</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/23/Grouped-Barplot-in-My-Paper/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -385,65 +444,6 @@ __name__ == '__main__'
 
 
   
-    <article id="post-Bias-Variance-Decompostion" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/08/Bias-Variance-Decompostion/">Bias-Variance Decompostion</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/08/Bias-Variance-Decompostion/" class="archive-article-date">
-  	<time datetime="2017-06-08T14:13:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>For the test sample $x$, $y_{D}$ is the unitary marker in the dataset, and $y$ is the real marker for $x$, $f(x, D)$ is the predict output generated by model $f$ based on the training dataset $D$.<br>Take the regression task as an instance, the prediction expectation of model is $$\overline{f}(x) = E_{D}[f(x;D)]$$When the different training dataset with the same size was applied, the variance should be $$var(x) = E_{D}[(f(x;D) - \overline{f}(x))^{2}]$$The noise would be $$\epsilon^{2} = E_{D}[(y_{D}-y)^{2}]$$The difference between expected output and the real marker is called <b>bias</b>, i.e.$$bias^{2}(x) = (\overline{f}(x)-y)^{2}$$Assume the expectation of noise is $0$, $E_{D}[y_{D}-y] = 0$. We can decompose the generalization error of trained model use polynomial calculation<br>\begin{equation}<br>\begin{split}<br>E(f;D)&amp; = E_{D}[(f(x;D)-y_{D})^{2}]\\<br>&amp; =E_{D}[(f(x;D) - \overline{f}(x) + \overline{f}(x) - y_{D})^{2}]\\<br>&amp; =E_{D}[(f(x;D) - \overline{f}(x))^{2}] + E_{D}[\overline{f}(x) - y_{D}]^{2}\\<br>&amp; \quad +E_{D}[2(f(x;D) - \overline{f}(x))(\overline{f}(x)-y_{D})]\\<br>&amp; =E_{D}[(f(x;D)-\overline{f}(x))^{2}] + E_{D}[(\overline{f}(x) - y_{D})^{2}]\\<br>&amp; =E_{D}[(f(x;D)-\overline{f}(x))^{2}] + E_{D}[(\overline{f}(x) - y + y - y_{D})^{2}]\\<br>&amp; =E_{D}[(f(x;D)-\overline{f}(x))^{2}] + E_{D}[(\overline{f}(x) - y)^{2}] + E_{D}[(y - y_{D})^{2}]\\<br>&amp; \quad +2E_{D}[(\overline{f}(x) - y)(y - y_{D})]\\<br>&amp; =E_{D}[(f(x;D)-\overline{f}(x))^{2}] + (\overline{f}(x) - y)^{2} + E_{D}[(y - y_{D})^{2}]\\<br>\end{split}<br>\end{equation}Hence we can draw a conclusion that $$E(f;D) = bias^{2}(x) + var(x) + \epsilon^{2}$$In other words, generalization error could be comprehensed as the sum of bias, viarance and noise.</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/08/Bias-Variance-Decompostion/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -561,7 +561,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
+                <a href="javascript:void(0)" class="js-tag color3">ML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,11 +569,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Biology</a>
+                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,7 +577,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Biology</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,11 +601,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
               </li>
              
               <li class="article-tag-list-item">
