@@ -127,6 +127,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Biostrings-Source-Code-reading-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/18/Biostrings-Source-Code-reading-1/">Biostrings Source Code reading 1</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/18/Biostrings-Source-Code-reading-1/" class="archive-article-date">
+  	<time datetime="2017-07-18T12:27:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Source-code-in-the-file-Biostrings-R-00datacache-R"><a href="#Source-code-in-the-file-Biostrings-R-00datacache-R" class="headerlink" title="Source code in the file Biostrings/R/00datacache.R"></a>Source code in the file <code>Biostrings/R/00datacache.R</code></h3><p>```r</p>
+<h3 id=""><a href="#" class="headerlink" title="========================================================================="></a>=========================================================================</h3><h3 id="Environment-for-storing-run-time-objects"><a href="#Environment-for-storing-run-time-objects" class="headerlink" title="Environment for storing run-time objects"></a>Environment for storing run-time objects</h3><p>###</p>
+<p>RTobjs &lt;- new.env(hash=TRUE, parent=emptyenv())</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title="========================================================================="></a>=========================================================================</h3><h3 id="Serialized-objects"><a href="#Serialized-objects" class="headerlink" title="Serialized objects"></a>Serialized objects</h3><p>###</p>
+<p>SERIALIZED_OBJNAMES &lt;- c(<br>    “BLOSUM45”,<br>    “BLOSUM50”,<br>    “BLOSUM62”,<br>    “BLOSUM80”,<br>    “BLOSUM100”,<br>    “PAM30”,<br>    “PAM40”,<br>    “PAM70”,<br>    “PAM120”,<br>    “PAM250”<br>)</p>
+<h3 id="-2"><a href="#-2" class="headerlink" title="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"></a>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</h3><h3 id="Objects-created-“on-the-fly”-not-serialized"><a href="#Objects-created-“on-the-fly”-not-serialized" class="headerlink" title="Objects created “on-the-fly” (not serialized)"></a>Objects created “on-the-fly” (not serialized)</h3><p>###</p>
+<h3 id="WARNING-Improper-calls-to-‘getdata’-by-the-‘createObject’-function-can"><a href="#WARNING-Improper-calls-to-‘getdata’-by-the-‘createObject’-function-can" class="headerlink" title="WARNING: Improper calls to ‘getdata’ by the ‘createObject’ function can"></a>WARNING: Improper calls to ‘getdata’ by the ‘createObject’ function can</h3><h3 id="lead-to-infinite-recursive-loops"><a href="#lead-to-infinite-recursive-loops" class="headerlink" title="lead to infinite recursive loops!"></a>lead to infinite recursive loops!</h3><p>###</p>
+<p>createObject &lt;- function(objname)<br>{</p>
+<pre><code># add more here...
+stop(&quot;don&apos;t know how to create object &apos;&quot;, objname, &quot;&apos;&quot;)
+</code></pre><p>}</p>
+<h3 id="-3"><a href="#-3" class="headerlink" title="- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"></a>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</h3><h3 id="The-“getdata”-function-NOT-exported"><a href="#The-“getdata”-function-NOT-exported" class="headerlink" title="The “getdata” function (NOT exported)"></a>The “getdata” function (NOT exported)</h3><p>###</p>
+<p>datacache &lt;- new.env(hash=TRUE, parent=emptyenv())</p>
+<p>getdata &lt;- function(objname)<br>{<br>    if (!exists(objname, envir=datacache)) {<br>        if (objname %in% SERIALIZED_OBJNAMES) {<br>            data(list=objname, package=”Biostrings”, envir=datacache)<br>        } else {<br>            assign(objname, createObject(objname), envir=datacache)<br>        }<br>    }<br>    get(objname, envir=datacache)<br>}<br>```<hr></p>
+<h4 id="Function-description"><a href="#Function-description" class="headerlink" title="Function description"></a>Function description</h4><ol>
+<li><code>new.env()</code><pre>new.env(hash = TRUE, parent = parent.frame(), size = 29L)</pre></li>
+<li><code>data()</code><br><code>data()</code> was originally intended to allow users to load datasets from packages for use in their examples, and as such it loaded the datasets into the workspace .GlobalEnv. This avoided having large datasets in memory when not in use. That need has been almost entirely superseded by lazy-loading of datasets.</li>
+<li><code>assign()</code><br>Assign a value to a name in an environment.</li>
+<li><code>get()</code><br>Search by name for an object (<code>get()</code>) or zero or more objects (<code>mget()</code>).</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/18/Biostrings-Source-Code-reading-1/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-POSIX-multithreading" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -430,65 +508,6 @@
 
 
   
-    <article id="post-Embedded-HTML-generated-by-R-in-markdown" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/07/Embedded-HTML-generated-by-R-in-markdown/">Embedded HTML generated by R in markdown</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/07/Embedded-HTML-generated-by-R-in-markdown/" class="archive-article-date">
-  	<time datetime="2017-07-06T16:52:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><pre class="r"><code class="r"><span class="operator">&gt;</span> <span class="comment"># Prepare and tranform the data</span><br><span class="operator">&gt;</span> <span class="keyword">library</span><span class="paren">(</span><span class="identifier">dplyr</span><span class="paren">)</span><br><span class="operator">&gt;</span> <span class="identifier">mydf</span> <span class="operator">&lt;-</span> <span class="identifier">read.csv</span><span class="paren">(</span><span class="string">“C:\Users\Huang\Desktop\my_swirl.csv”</span>, <span class="identifier">stringsAsFactors</span> <span class="operator">=</span> <span class="literal">FALSE</span><span class="paren">)</span><br><span class="operator">&gt;</span> <span class="identifier">cran</span> <span class="operator">=</span> <span class="identifier">tbl_df</span><span class="paren">(</span><span class="identifier">mydf</span><span class="paren">)</span><br><span class="operator">&gt;</span> <span class="comment"># group_by() parameters: data, variable1, [variable2, …]</span><br><span class="operator">&gt;</span> <span class="comment"># Here we use the package vcriable</span><br><span class="operator">&gt;</span> <span class="identifier">by_package</span> <span class="operator">&lt;-</span> <span class="identifier">group_by</span><span class="paren">(</span><span class="identifier">cran</span>, <span class="identifier">package</span><span class="paren">)</span> <span class="comment"># Note: assignment use “&lt;-“ instead “=”</span><br><span class="operator">&gt;</span> <span class="identifier">by_package</span></code></pre><br>Seems nothing works. I need to find another way…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/07/Embedded-HTML-generated-by-R-in-markdown/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -610,19 +629,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">R</a>
+                <a href="javascript:void(0)" class="js-tag color3">Biology</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Biology</a>
+                <a href="javascript:void(0)" class="js-tag color2">R</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,6 +653,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
              
@@ -646,15 +665,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
             
             <div class="clearfix"></div>
