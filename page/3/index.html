@@ -127,6 +127,110 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Analyzing-Non-Normal-Data" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/05/Analyzing-Non-Normal-Data/">Analyzing Non-Normal Data</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/05/Analyzing-Non-Normal-Data/" class="archive-article-date">
+  	<time datetime="2017-07-05T15:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Determine-the-normality-of-the-dataset"><a href="#Determine-the-normality-of-the-dataset" class="headerlink" title="Determine the normality of the dataset"></a>Determine the normality of the dataset</h4><ol>
+<li><b>Histogram</b>&nbsp;&nbsp;&nbsp;&nbsp;Do your data resemble a bell-shaped curve?</li>
+<li><b>Normality Test</b>&nbsp;&nbsp;&nbsp;&nbsp;Is the p-value greater than your $\alpha$-level(e.g. $\alpha = 0.05$)?</li>
+<li><b>Probability Plot</b>&nbsp;&nbsp;&nbsp;&nbsp;Do the plotted points follow a straight line?<h4 id="The-reason-for-non-normality-of-data"><a href="#The-reason-for-non-normality-of-data" class="headerlink" title="The reason for non-normality of data"></a>The reason for non-normality of data</h4></li>
+</ol>
+<ul>
+<li>Sampled from different populations (locations, genders, seasons, etc.)</li>
+<li>Shift and drift over time.</li>
+<li>Contain extreme outliers.</li>
+<li>Have insufficient resolution (too few significant digits).</li>
+</ul>
+<h4 id="Analyzing-Non-Normal-Data"><a href="#Analyzing-Non-Normal-Data" class="headerlink" title="Analyzing Non-Normal Data"></a>Analyzing Non-Normal Data</h4><ol>
+<li><b>Nonparametrics</b>&nbsp;&nbsp;&nbsp;&nbsp;The main difference between parametric and nonparametric is the theretical base, for the parametric the base is <b><em>mean</em></b>, but for the nonparametric, the base is <b><em>median</em></b>. </li>
+<li><b>Alternative Distributions</b>&nbsp;&nbsp;&nbsp;&nbsp;For example, Weibull and exponential distribution, just pick the most fitted model.</li>
+<li><b>Transformations</b>&nbsp;&nbsp;&nbsp;&nbsp;Like the transformation data in Machine Learning.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Parametric Tests</th>
+<th style="text-align:center">Nonparametric Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1-Sample t</td>
+<td style="text-align:center">1-Sample Sign or Wilcoxon</td>
+</tr>
+<tr>
+<td style="text-align:center">2-Sample t</td>
+<td style="text-align:center">Mann-Whitney</td>
+</tr>
+<tr>
+<td style="text-align:center">One-Factor ANOVA</td>
+<td style="text-align:center">Kruskal-Wallis or Mood</td>
+</tr>
+<tr>
+<td style="text-align:center">Two-Factor ANOVA</td>
+<td style="text-align:center">Friedman</td>
+</tr>
+<tr>
+<td style="text-align:center">Pearson Correlation</td>
+<td style="text-align:center">Spearman Correlation</td>
+</tr>
+</tbody>
+</table>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Statistics</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/05/Analyzing-Non-Normal-Data/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Zen-about-Graphs-in-Paper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -401,81 +505,9 @@
 
 
   
-    <article id="post-Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/21/Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular/">Classification of Fungi and Protozoa-Traditonal and molecular</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/21/Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular/" class="archive-article-date">
-  	<time datetime="2017-06-21T12:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Traditionally, the main differences between fungi and protozoa are as follows:</p>
-<ul>
-<li>Fungi<ul>
-<li>mainly multicellular eukaryotic organisms</li>
-<li>normally saprophytes means they feed on dead and decay organic matter</li>
-<li>the same ancestor</li>
-</ul>
-</li>
-<li>Protozoa<ul>
-<li>unicellular eukaryotic organisms</li>
-<li>could be autotrophic or heterotrophic</li>
-</ul>
-</li>
-</ul>
-<p>But in the view of molecular biology, these nomenclature critirias are somewhat unprecise. For example, <b><em>Enterocytozoon bieneusi</em></b>, which was able to infect humans, especially immune deficient people like HIV patients and organ tranplatated individuals, is a major zoonotic microsporidia.</p><p>A few years ago, this kind of organism was treated as protozoa, while the sequencing results curve a crapses on the conclusion. Based on the nonmenclature analysis, microsporidia was classified as <b><em>fungi</em></b>.</p><p><b><em>Cell</em></b> publised a paper in the last week, it said that the process of PCR relplication is random, but the assemble of double strand is very percise. In this prospect, to undertading the molecular biology, we still have a long way to go.</p>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Biology</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/21/Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -590,7 +622,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
+                <a href="javascript:void(0)" class="js-tag color3">ML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -598,11 +634,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,7 +658,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,7 +666,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,7 +674,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
             
             <div class="clearfix"></div>
