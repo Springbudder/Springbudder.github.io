@@ -127,6 +127,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Managing-many-models-in-R" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/07/Managing-many-models-in-R/">Managing many models in R</a>
+    </h1>
+  
+
+        
+        <a href="/2017/07/07/Managing-many-models-in-R/" class="archive-article-date">
+  	<time datetime="2017-07-07T06:25:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Three-idea-underlying-the-data"><a href="#Three-idea-underlying-the-data" class="headerlink" title="Three idea underlying the data"></a>Three idea underlying the data</h3><p>Each idea is partnered with a package:</p>
+<ol>
+<li><b>Nested data</b> (<code>tidyr</code>)</li>
+<li><b>Functional programming</b> (<code>purrr</code>)</li>
+<li><b>Models to tidy data</b> (<code>broom</code>)<h4 id="Nested-data"><a href="#Nested-data" class="headerlink" title="Nested data"></a>Nested data</h4><b>Definitition:</b> Dataframe inside dataframes.<br>Here is pipe example:<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">x %&gt;% f(y)</div><div class="line"><span class="comment"># is the same as:</span></div><div class="line">f(x, y)</div><div class="line"></div><div class="line">gapminder %&gt;% </div><div class="line">	group_by(continent, country) %&gt;%</div><div class="line">	nest()</div><div class="line"><span class="comment"># same as:</span></div><div class="line">nest(group_by(gapminder, continent, country))</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><code>%&gt;%</code> represented pipe, it is just a syntax sugar and makes the code more easier for humans to read.Why we don’t store the models in a column? Because we have list.<br><img src="https://github.com/Springbudder/images/blob/master/image1.PNG?raw=true" width="40%"><img src="https://github.com/Springbudder/images/blob/master/image2.PNG?raw=true" width="40%"><img src="https://github.com/Springbudder/images/blob/master/image3.PNG?raw=true" width="40%"></p>
+<p>In R:<figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(dplyr)</div><div class="line"><span class="keyword">library</span>(purrr)</div><div class="line"></div><div class="line">country_model &lt;- <span class="keyword">function</span>(df)</div><div class="line">&#123;</div><div class="line">	lm(lifeExp ~ year1950, data = df)</div><div class="line">&#125;</div><div class="line"></div><div class="line">models &lt;- by_country %&gt;%</div><div class="line">	mutate (</div><div class="line">		mod = map(data, country_model)</div><div class="line">	)</div></pre></td></tr></table></figure></p>
+<h4 id="Functional-programming"><a href="#Functional-programming" class="headerlink" title="Functional programming"></a>Functional programming</h4><p>Need to fullfill…</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/07/07/Managing-many-models-in-R/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Embedded-HTML-generated-by-R-in-markdown" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -428,80 +496,6 @@
 
 
   
-    <article id="post-Memory-management-in-R" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/01/Memory-management-in-R/">Memory management in R</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/01/Memory-management-in-R/" class="archive-article-date">
-  	<time datetime="2017-07-01T03:54:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Object-size"><a href="#Object-size" class="headerlink" title="Object size"></a>Object size</h3><p>To determine the size of an object in R, built-in function <code>object_size()</code> is an option. Alternatively, the function <code>object_size()</code> in the package <code>pryr</code>, which has the same name with that of in the builtin namespace is better than that since it accounts for shared elements within an object and includes the size of environments. For example:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(pryr)</div><div class="line">object_size(<span class="number">1</span>:<span class="number">10</span>)</div><div class="line">[<span class="number">1</span>] <span class="number">88</span> B</div><div class="line"></div><div class="line">object_size(mean)</div><div class="line">[<span class="number">1</span>] <span class="number">832</span> B</div><div class="line"></div><div class="line">object_size(numeric())</div><div class="line">[<span class="number">1</span>] <span class="number">40</span> B</div></pre></td></tr></table></figure></p>
-<p>See? The empty vector occupies 40 bytes. Then why? Here is the answer. Those 40 bytes are used to store four components possessed by every object in R:</p>
-<ul>
-<li><b>Object metadata</b> (4 bytes). These metadata store the base type (e.g. integer) and information used for debugging and memory management.</li>
-<li><b>Two pointers</b>: one to the next object in memory and one to the previous object (2 * 8 bytes). This doubly-linked list makes it easy for internal R code to loop through every object in memory.</li>
-<li><b>A pointer to the attributes </b>(8 bytes).</li>
-</ul>
-<h3 id="Memory-usage-and-garbage-collection"><a href="#Memory-usage-and-garbage-collection" class="headerlink" title="Memory usage and garbage collection"></a>Memory usage and garbage collection</h3><p>While <code>object_size()</code> tells you the size of a single object, <code>pryr::mem_used()</code> tells you the total size of all objects in memory:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(pryr)</div><div class="line">mem_used()</div><div class="line">[<span class="number">1</span>] <span class="number">100</span> MB</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>In R, the two main causes of memory leaks are formulas and closures because they both capture the enclosing environment.</p>
-</blockquote>
-<h3 id="Memory-profiling"><a href="#Memory-profiling" class="headerlink" title="Memory profiling"></a>Memory profiling</h3><p>Just use this function:<code>utils::Rprof()</code></p>
-<h3 id="Modification-in-place"><a href="#Modification-in-place" class="headerlink" title="Modification in place"></a>Modification in place</h3><p>For example:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">x &lt;- <span class="number">1</span>:<span class="number">10</span></div><div class="line">x[<span class="number">5</span>] &lt;- <span class="number">10</span></div><div class="line">x</div></pre></td></tr></table></figure></p>
-<p>R can modifiy the x either in original object or the copied one, depends on whether other variable point to the object. In my opinion, it is a little bit tricky. You need to trace the memory to check the modification. The debugging and tracing methods are as follows:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">library</span>(pryr)</div><div class="line">x &lt;- <span class="number">1</span>:<span class="number">10</span></div><div class="line">c(address(x), refs(x))</div><div class="line">[<span class="number">1</span>] <span class="string">"0x103110060"</span> <span class="string">"1"</span></div><div class="line"></div><div class="line">y &lt;- x</div><div class="line">c(address(y), refs(y))</div><div class="line">[<span class="number">1</span>] <span class="string">"0x103100060"</span> <span class="string">"2"</span></div></pre></td></tr></table></figure></p>
-<p>In the code above, <code>address()</code> returns the location of the object, <code>refs()</code> will return the number of names point to that locaton, if the number is 0, then the memory will be released. (Classic GC method just like Python)<br>In R, all of the non-primitive function will increase the <code>refs</code>, but primitive functions usually not.</p>
-<p><a href="http://adv-r.had.co.nz/memory.html#modification" target="_blank" rel="external">Reference</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">R</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/01/Memory-management-in-R/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -619,15 +613,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">ML</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,11 +625,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Medical technology</a>
+                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Biology</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Medical technology</a>
               </li>
              
               <li class="article-tag-list-item">
