@@ -127,6 +127,69 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-A-raw-implement-of-Perceptron" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/26/A-raw-implement-of-Perceptron/">A raw implement of Perceptron</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/26/A-raw-implement-of-Perceptron/" class="archive-article-date">
+  	<time datetime="2017-05-26T14:44:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p></p><p>The perceptron classified the two Iris flower classes perfectly, <b>convergence</b> is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:</p>
+<blockquote>
+<p>the perceptron learning rule converges if the two classes can be separated by a linear hyperplane. </p>
+</blockquote>
+<p>However, if classes cannot be separated perfectly by such a linear decision boundary, the weights will never stop updating unless we set a maximum number of <b>epochs</b>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Perceptron</span><span class="params">(object)</span>:</span></div><div class="line">   <span class="string">"""</span></div><div class="line">   Perceptron classifier.</div><div class="line">   </div><div class="line">   </div><div class="line">   Parameters</div><div class="line">   ---------------------------</div><div class="line">   eta: float</div><div class="line">       Learning rate (between 0.0 and 1.0)</div><div class="line">       </div><div class="line">   n_iter: int</div><div class="line">       Passes over the traning dataset</div><div class="line">       </div><div class="line">       </div><div class="line">       </div><div class="line">   Attributes    </div><div class="line">   ---------------------------</div><div class="line">   w_: 1d-array</div><div class="line">       Weights after fitting</div><div class="line">   </div><div class="line">   errors_: list</div><div class="line">       Number of misclassification in every epoch</div><div class="line">   </div><div class="line">   """</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, eta = <span class="number">0.01</span>, n_iter = <span class="number">10</span>)</span>:</span></div><div class="line">       self.eta = eta</div><div class="line">       self.n_iter = n_iter</div><div class="line">       </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">fit</span><span class="params">(self, X, y)</span>:</span>       </div><div class="line">       <span class="string">"""</span></div><div class="line">       fit the traning data</div><div class="line">       </div><div class="line">       Parameters</div><div class="line">       ----------------------------</div><div class="line">       X: &#123;array-like&#125;, shape = [n_sample, n_features]</div><div class="line">           Training vectors, where n_samples is the number of samples and </div><div class="line">           n_features is the number of features</div><div class="line">           </div><div class="line">       y: array-like, shape = [n_samples]</div><div class="line">           Target values.</div><div class="line">           </div><div class="line">           </div><div class="line">       Returns</div><div class="line">       ----------------------------</div><div class="line">       self: object</div><div class="line">       </div><div class="line">       """</div><div class="line">       self.w_ = np.zeros(<span class="number">1</span> + X.shape[<span class="number">1</span>])</div><div class="line">       self.errors_ = []</div><div class="line">       </div><div class="line">       <span class="keyword">for</span> _ <span class="keyword">in</span> range(self.n_iter):</div><div class="line">           errors = <span class="number">0</span></div><div class="line">           <span class="keyword">for</span> xi, target <span class="keyword">in</span> zip(X, y):</div><div class="line">               update = self.eta * (target - self.predict(xi))</div><div class="line">               self.w_[<span class="number">1</span>:] += update * xi</div><div class="line">               self.w_[<span class="number">0</span>] += update</div><div class="line">               errors += int(update != <span class="number">0.0</span>)</div><div class="line">               </div><div class="line">           self.errors_.append(errors)    </div><div class="line">       <span class="keyword">return</span> self</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">net_input</span><span class="params">(self, X)</span>:</span></div><div class="line">       <span class="string">"""</span></div><div class="line">       Calculate net input</div><div class="line">       """</div><div class="line">       <span class="keyword">return</span> np.dot(X, self.w_[<span class="number">1</span>:] + self.w_[<span class="number">0</span>])</div><div class="line">   </div><div class="line">   <span class="function"><span class="keyword">def</span> <span class="title">predict</span><span class="params">(self, X)</span>:</span></div><div class="line">       <span class="string">"""</span></div><div class="line">       Return class label after unit step</div><div class="line">       """</div><div class="line">       <span class="keyword">return</span> np.where(self.net_input(X) &gt;= <span class="number">0.0</span>, <span class="number">1</span>, <span class="number">-1</span>)</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/26/A-raw-implement-of-Perceptron/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-Leetcode-median-of-two-sorted-arrays" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -386,73 +449,6 @@
 
 
   
-    <article id="post-k-Means-DBSCAN-and-agglomerative-clustring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">k-Means, DBSCAN and agglomerative clustring</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/" class="archive-article-date">
-  	<time datetime="2017-05-20T07:47:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Cluatering-methods"><a href="#Cluatering-methods" class="headerlink" title="Cluatering methods"></a>Cluatering methods</h3><ul>
-<li><b><em>k</em>-Means</b></li>
-<li><b>Agglomerative clustering</b></li>
-<li><b>DBSCAN</b></li>
-</ul>
-<p><br>of the methods above, <b><em>k</em>-Means</b> and <b>Agglomerative clustering</b> allows to specify the number of desired clusters, while <b>DBSCAN</b> indirectly influences cluster sizes with the parameter <b><em>eps</em></b>.<br></p>
-
-
-<p><br><b><em>k</em>-Means</b> can be viewed as dimentionality reduction method, since one cluster can be represented by th mean data. <b>DBSCAN</b> could be used for looking outliers and the main advantage is it can be applied in the complex shapes, for example, two_moons datasets. In addition, <b>Agglomerative clustering</b> could give us a more recognizable dendrogram, which is similar to the dicision tree, quit understandable to the unexperts.<br></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/20/k-Means-DBSCAN-and-agglomerative-clustring/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
@@ -570,15 +566,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">R</a>
+                <a href="javascript:void(0)" class="js-tag color3">ML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,7 +578,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Biology</a>
+                <a href="javascript:void(0)" class="js-tag color2">R</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,11 +586,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color3">Biology</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,7 +598,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -614,7 +606,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,10 +623,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
             
             <div class="clearfix"></div>
