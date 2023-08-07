@@ -127,6 +127,139 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Iterative-features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/21/Iterative-features-selection/">Iterative features selection</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/21/Iterative-features-selection/" class="archive-article-date">
+  	<time datetime="2017-05-21T11:42:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Forward-and-Backward"><a href="#Forward-and-Backward" class="headerlink" title="Forward and Backward"></a>Forward and Backward</h4><p></p><p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p><p></p>
+<p></p><p><b>Recursive feature elimination (RFE):</b><br>starts with all features, builds a model, and discards the least important feature according to the model. Then a new model is built using all but the discarded feature, and so on until only a prespecified number of features are left.</p><br><b>It is very time consuming.</b><br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="string">"""</span></div><div class="line">Part of the code.</div><div class="line">Just to show the application of RFE model selection.</div><div class="line">"""</div><div class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> RFE</div><div class="line"><span class="keyword">from</span> sklean.linear_model <span class="keyword">import</span> LogisticRegression</div><div class="line"></div><div class="line">select = RFE(RandomForestClassifier(n_estimators = <span class="number">100</span>, random_state = <span class="number">42</span>), n_features_to_select = <span class="number">40</span>)select.fit(X_train, y_train)</div><div class="line">X_train_rfe = select.transform(X_train)</div><div class="line">X_test_rfe = select.transform(X_test)</div><div class="line">score = LogisticRegression().fit(X_train_rfe, y_train).score(X_test_rfe, y_test)</div><div class="line"></div><div class="line"><span class="keyword">print</span> <span class="string">"Test score: &#123;:.3f&#125;"</span>.format(score)</div><div class="line">Test score: <span class="number">0.951</span></div></pre></td></tr></table></figure><p></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/21/Iterative-features-selection/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Data-encoding-and-Features-selection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/20/Data-encoding-and-Features-selection/">Data encoding and Features selection</a>
+    </h1>
+  
+
+        
+        <a href="/2017/05/20/Data-encoding-and-Features-selection/" class="archive-article-date">
+  	<time datetime="2017-05-20T12:30:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Representing-Data-and-Engineering-Features"><a href="#Representing-Data-and-Engineering-Features" class="headerlink" title="Representing Data and Engineering Features"></a>Representing Data and Engineering Features</h3><h4 id="Categorical-Data"><a href="#Categorical-Data" class="headerlink" title="Categorical Data"></a>Categorical Data</h4><ul>
+<li>One-Hot-Encoding (Dummy Variables)</li>
+</ul>
+<p>Dummy Varibles is quite straight-forward, for n features, different samples have different features. We can specify the feature that the samples embeded as 1, none as 0.<br><br><br><b>Note</b>: Dummy variables in machine learning differ from the statistics. In the later field, we denotes the dummy variable in the number ranged from 0 to n-1, n is the numbers of features. Why we should encode the dummy  variable in 0 and 1? <b>To avoid data matrix rank deficient.</b></p>
+<ul>
+<li>Binning, Discretization, Linear Models, and Trees</li>
+</ul>
+<p>Though bins is relatively powerful in linear regression, tree based methods seems more powerful than linear models. If there are some reasons we must used linear regression, then it will be <b>large datasize</b> and <b>tremendous features</b>. Besides, <b>expannation demands</b> also could be an alternative.</p>
+<hr>
+
+<h4 id="Automatical-Feature-selection"><a href="#Automatical-Feature-selection" class="headerlink" title="Automatical Feature selection"></a>Automatical Feature selection</h4><ul>
+<li>Univariate statistics</li>
+<li>Model based selection</li>
+<li>Iterative selection</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/05/20/Data-encoding-and-Features-selection/">read more... >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-k-Means-DBSCAN-and-agglomerative-clustring" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -322,126 +455,9 @@
 
 
   
-    <article id="post-Hyperparameters-tunning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/06/Hyperparameters-tunning/">Hyperparameters tunning</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/06/Hyperparameters-tunning/" class="archive-article-date">
-  	<time datetime="2017-01-05T16:52:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Tuning-hyperparameters"><a href="#Tuning-hyperparameters" class="headerlink" title="Tuning hyperparameters"></a>Tuning hyperparameters</h3><ol>
-<li>Determing the range of parameters<ol>
-<li>Reading papers</li>
-<li>Anchor one parameter that can use</li>
-<li>Try others</li>
-</ol>
-</li>
-<li>Plotting</li>
-<li>Grid search(SVM, RandomForest) and Bayesian optimization(complicated model)</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/06/Hyperparameters-tunning/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-Issues-about-machine-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/02/Issues-about-machine-learning/">Issues about machine learning</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/02/Issues-about-machine-learning/" class="archive-article-date">
-  	<time datetime="2017-01-01T17:51:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Yesterday, I read a blog in Wechat that talks about the trend of bioinformatic in 2017. It seems that machine learning will be more and more important in acadimia or insustry. Since I have learned the theory and applications of machine learning for more than two years, so I was pretty delight hearing this news.</p>
-<p>In the passed two weeks…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/02/Issues-about-machine-learning/">read more... >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 
@@ -556,7 +572,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
+                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,19 +580,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Statistics</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">R</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Medical technology</a>
+                <a href="javascript:void(0)" class="js-tag color5">System/Windows</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Biology</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Medical technology</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,15 +604,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bioinformatics</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Programming</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,11 +624,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
+                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Mongol</a>
+                <a href="javascript:void(0)" class="js-tag color1">R/visualization</a>
               </li>
             
             <div class="clearfix"></div>
