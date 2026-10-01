@@ -1,0 +1,88 @@
+---
+title: A raw implement of Perceptron
+date: 2017-05-26 22:44:35
+tags: ML
+categories: 数据科学与编程
+---
+<p>The perceptron classified the two Iris flower classes perfectly, <b>convergence</b> is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:
+
+>the perceptron learning rule converges if the two classes can be separated by a linear hyperplane. 
+
+However, if classes cannot be separated perfectly by such a linear decision boundary, the weights will never stop updating unless we set a maximum number of <b>epochs</b>.
+
+{% codeblock lang:Python %}
+
+	class Perceptron(object):
+    """
+    Perceptron classifier.
+    
+    
+    Parameters
+    ---------------------------
+    eta: float
+        Learning rate (between 0.0 and 1.0)
+        
+    n_iter: int
+        Passes over the traning dataset
+        
+        
+        
+    Attributes    
+    ---------------------------
+    w_: 1d-array
+        Weights after fitting
+    
+    errors_: list
+        Number of misclassification in every epoch
+    
+    """
+    
+    def __init__(self, eta = 0.01, n_iter = 10):
+        self.eta = eta
+        self.n_iter = n_iter
+        
+    def fit(self, X, y):       
+        """
+        fit the traning data
+        
+        Parameters
+        ----------------------------
+        X: {array-like}, shape = [n_sample, n_features]
+            Training vectors, where n_samples is the number of samples and 
+            n_features is the number of features
+            
+        y: array-like, shape = [n_samples]
+            Target values.
+            
+            
+        Returns
+        ----------------------------
+        self: object
+        
+        """
+        self.w_ = np.zeros(1 + X.shape[1])
+        self.errors_ = []
+        
+        for _ in range(self.n_iter):
+            errors = 0
+            for xi, target in zip(X, y):
+                update = self.eta * (target - self.predict(xi))
+                self.w_[1:] += update * xi
+                self.w_[0] += update
+                errors += int(update != 0.0)
+                
+            self.errors_.append(errors)    
+        return self
+    
+    def net_input(self, X):
+        """
+        Calculate net input
+        """
+        return np.dot(X, self.w_[1:] + self.w_[0])
+    
+    def predict(self, X):
+        """
+        Return class label after unit step
+        """
+        return np.where(self.net_input(X) >= 0.0, 1, -1)
+{% endcodeblock %}

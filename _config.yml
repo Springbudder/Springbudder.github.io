@@ -1,0 +1,82 @@
+# Hexo 7 站点配置
+title: Springbudder
+subtitle: 'AI × 医药 · 从分子诊断到大模型落地'
+description: '黄成琛的个人博客：医药与诊断行业观察、AI 与数字化实践、数据科学笔记与读史随笔。'
+keywords: AI, 医药, 分子诊断, 医学事务, 数字化, 大模型, 数据科学
+author: 黄成琛 (Springbudder)
+language: zh-CN
+timezone:  # 留空：按构建机时区（CI 里设为 Asia/Shanghai），保证旧文章 URL 中的日期不变
+
+url: https://springbudder.github.io
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - My_HTML/**
+  - my_R/**
+  - 2023/**/index.html   # 旧地址跳转页
+
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ''
+  wrap: true
+  hljs: false
+prismjs:
+  preprocess: true
+  line_number: true
+  tab_replace: ''
+
+marked:
+  prependRoot: true
+  postAsset: true
+
+index_generator:
+  path: ''
+  per_page: 8
+  order_by: -date
+
+default_category: uncategorized
+category_map:
+tag_map:
+
+meta_generator: true
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'
+
+per_page: 10
+pagination_dir: page
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+sitemap:
+  path: sitemap.xml
+
+theme: fluid

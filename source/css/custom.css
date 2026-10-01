@@ -1,0 +1,20 @@
+/* Springbudder 自定义样式：在 Fluid 基础上微调 */
+#subtitle, .banner-text h1, .page-header h1 {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif;
+  letter-spacing: 0.06em;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3,
+.index-header a, .post-content h1#seo-header {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif;
+}
+.markdown-body h2 { border-bottom-color: var(--line-color); padding-bottom: .3em; }
+.markdown-body blockquote { border-left-color: #c27c2c; }
+.index-card .index-header a:hover { color: var(--link-hover-color); }
+.footer-sep { margin: 0 .4em; opacity: .6; }
+/* 关于页的时间线 */
+.about-timeline { list-style: none; padding-left: 0; margin-left: .3em; border-left: 2px solid var(--line-color); }
+.about-timeline li { position: relative; padding: 0 0 1em 1.2em; }
+.about-timeline li::before { content: ""; position: absolute; left: -7px; top: .55em; width: 12px; height: 12px; border-radius: 50%; background: #c27c2c; }
+.about-timeline .when { display: block; font-size: .85em; color: var(--sec-text-color); }
+/* R 生成的嵌入页面 */
+.markdown-body iframe { max-width: 100%; border: 1px solid var(--line-color); border-radius: 6px; }
