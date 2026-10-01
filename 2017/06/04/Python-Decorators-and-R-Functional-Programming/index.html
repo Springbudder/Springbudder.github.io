@@ -16,7 +16,7 @@
 <meta property="og:description" content="Decorator is a very powerful feature in Python. It makes functional programming more convenient, albeit Python is not a much feasible option. Strictly, I think decorators is just a syntax sugar. Compa">
 <meta property="og:locale">
 <meta property="article:published_time" content="2017-06-04T11:58:05.000Z">
-<meta property="article:modified_time" content="2026-10-01T18:32:23.656Z">
+<meta property="article:modified_time" content="2026-10-01T18:40:32.572Z">
 <meta property="article:author" content="Springbudder">
 <meta property="article:tag" content="ML">
 <meta name="twitter:card" content="summary">
@@ -153,7 +153,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>Decorator</strong> is a very powerful feature in Python. It makes <b>functional programming</b> more convenient, albeit Python is not a much feasible option. Strictly, I think decorators is just a syntax sugar. Compared to R, functional programming implemented by my own with Python is less elegant and natural.</p>
-<p>Beside decorators, `lambda` expression is aimming at functional programmingas well as `apply` series function in R language.</p>For example, sort a linked lists:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">class ListNode(object):</span></span><br><span class="line"><span class="string">	def __init__(self, x):</span></span><br><span class="line"><span class="string">		self.val = x</span></span><br><span class="line"><span class="string">		self.next = None</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">result = lists.sort(key = <span class="keyword">lambda</span> x:x.val)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">There are two way to sort: sort and sorted.</span></span><br><span class="line"><span class="string">sorted is a function, sort is a kind of attribute and it will change the object need to manipulate, but sorted will return a copy.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># Sort a dict</span></span><br><span class="line"><span class="comment"># Also can use OrderedDict function in the collections moduel</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">1</span>:<span class="string">&#x27;x&#x27;</span>, <span class="number">2</span>:<span class="string">&#x27;y&#x27;</span>, <span class="number">3</span>:<span class="string">&#x27;z&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span> <span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>Beside decorators, <code>lambda</code> expression is aimming at functional programmingas well as <code>apply</code> series function in R language.</p>For example, sort a linked lists:<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">class ListNode(object):</span></span><br><span class="line"><span class="string">	def __init__(self, x):</span></span><br><span class="line"><span class="string">		self.val = x</span></span><br><span class="line"><span class="string">		self.next = None</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line">result = lists.sort(key = <span class="keyword">lambda</span> x:x.val)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">There are two way to sort: sort and sorted.</span></span><br><span class="line"><span class="string">sorted is a function, sort is a kind of attribute and it will change the object need to manipulate, but sorted will return a copy.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># Sort a dict</span></span><br><span class="line"><span class="comment"># Also can use OrderedDict function in the collections moduel</span></span><br><span class="line"><span class="built_in">dict</span> = &#123;<span class="number">1</span>:<span class="string">&#x27;x&#x27;</span>, <span class="number">2</span>:<span class="string">&#x27;y&#x27;</span>, <span class="number">3</span>:<span class="string">&#x27;z&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">print</span> <span class="built_in">sorted</span>(<span class="built_in">dict</span>.items(), key = <span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 <details><summary>Need to fullfill...</summary><ul><li>Python</li><li>R</li></details>
       
 
@@ -354,10 +354,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -366,15 +362,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bioinformatics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">

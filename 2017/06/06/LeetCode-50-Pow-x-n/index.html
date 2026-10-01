@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://springbudder.github.io">
   <title>LeetCode 50-Pow(x, n) | Springbudder</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Question description:Implement &#96;pow(x, n)&#96;. C++ Version 123456789101112131415161718192021class Solution &#123;	public:    	double myPow(double x, int n) &#123;        	if (x &#x3D;&#x3D; 0 and n &#x3D;&#x3D; 0)">
+  <meta name="description" content="Question description:Implement pow(x, n). C++ Version 123456789101112131415161718192021class Solution &#123;	public:    	double myPow(double x, int n) &#123;        	if (x &#x3D;&#x3D; 0 and n &#x3D;&#x3D; 0)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode 50-Pow(x, n)">
 <meta property="og:url" content="https://springbudder.github.io/2017/06/06/LeetCode-50-Pow-x-n/index.html">
 <meta property="og:site_name" content="Springbudder">
-<meta property="og:description" content="Question description:Implement &#96;pow(x, n)&#96;. C++ Version 123456789101112131415161718192021class Solution &#123;	public:    	double myPow(double x, int n) &#123;        	if (x &#x3D;&#x3D; 0 and n &#x3D;&#x3D; 0)">
+<meta property="og:description" content="Question description:Implement pow(x, n). C++ Version 123456789101112131415161718192021class Solution &#123;	public:    	double myPow(double x, int n) &#123;        	if (x &#x3D;&#x3D; 0 and n &#x3D;&#x3D; 0)">
 <meta property="og:locale">
 <meta property="article:published_time" content="2017-06-06T08:54:14.000Z">
-<meta property="article:modified_time" content="2026-10-01T18:32:23.655Z">
+<meta property="article:modified_time" content="2026-10-01T18:40:32.571Z">
 <meta property="article:author" content="Springbudder">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
@@ -152,7 +152,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <details><summary>Question description:</summary>Implement `pow(x, n)`.</details>
+        <details><summary>Question description:</summary>Implement <code>pow(x, n)</code>.</details>
 C++ Version
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">    	<span class="function"><span class="type">double</span> <span class="title">myPow</span><span class="params">(<span class="type">double</span> x, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        	<span class="keyword">if</span> (x == <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span>)</span><br><span class="line">            	<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        	<span class="keyword">if</span> (x != <span class="number">0</span> <span class="keyword">and</span> n == <span class="number">0</span>)</span><br><span class="line">            	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        	<span class="keyword">if</span> (n &gt; <span class="number">0</span>)</span><br><span class="line">            	<span class="keyword">return</span> <span class="built_in">my_pow</span>(x, n);</span><br><span class="line">        	<span class="keyword">return</span> <span class="number">1</span> / <span class="built_in">my_pow</span>(x, -n);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    	<span class="function"><span class="type">double</span> <span class="title">my_pow</span><span class="params">(<span class="type">double</span> x, <span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        	<span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">            	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        	<span class="type">double</span> half = <span class="built_in">my_pow</span>(x, n / <span class="number">2</span>);</span><br><span class="line">        	<span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">            	<span class="keyword">return</span> half * half;</span><br><span class="line">        	<span class="keyword">return</span> half * half * x;</span><br><span class="line">    	&#125;</span><br><span class="line">&#125;;	</span><br></pre></td></tr></table></figure>
 Python Version
@@ -356,10 +356,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -368,15 +364,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bioinformatics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">

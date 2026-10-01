@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://springbudder.github.io/2022/09/14/%E5%AE%AA%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
+    <loc>https://springbudder.github.io/2017/06/03/%E5%AE%9A%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/06/03/%E5%AE%9A%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
+    <loc>https://springbudder.github.io/2022/09/14/%E5%AE%AA%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -38,25 +38,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/05/23/Leetcode-median-of-two-sorted-arrays/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/07/Managing-many-models-in-R/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/06/07/Martingale-and-Markov-Chain/</loc>
+    <loc>https://springbudder.github.io/2017/05/28/%E5%A4%AA%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -74,25 +56,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/07/01/Memory-management-in-R/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://springbudder.github.io/2023/11/08/Myriad-genetics-Third-Quarter-2023-Earnings-2023-11-8/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/10/Numba-package-speeds-up-my-Python/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -119,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/06/04/Python-Decorators-and-R-Functional-Programming/</loc>
+    <loc>https://springbudder.github.io/2017/07/10/Numba-package-speeds-up-my-Python/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -128,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/05/20/Something-about-t-SNE/</loc>
+    <loc>https://springbudder.github.io/2017/06/04/Python-Decorators-and-R-Functional-Programming/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -155,6 +119,15 @@
   </url>
   
   <url>
+    <loc>https://springbudder.github.io/2017/05/20/Something-about-t-SNE/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://springbudder.github.io/2017/07/06/The-difference-between-various-methods-to-import-csv-data/</loc>
     
     <lastmod>2026-10-01</lastmod>
@@ -164,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/05/19/Why-we-need-scaling/</loc>
+    <loc>https://springbudder.github.io/2017/07/05/Zen-about-Graphs-in-Paper/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -173,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2017/07/05/Zen-about-Graphs-in-Paper/</loc>
+    <loc>https://springbudder.github.io/2017/05/19/Why-we-need-scaling/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -210,15 +183,6 @@
   
   <url>
     <loc>https://springbudder.github.io/2017/06/06/%E5%89%8D%E8%92%99%E5%8F%A4%E7%BA%AA%E4%BA%8B%E6%9C%AC%E6%9C%AB%E5%8D%B7%E4%B8%8A-%E8%92%99%E5%85%80%E5%A7%8B%E5%9F%BA/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/05/28/%E5%A4%AA%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -308,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2023/07/31/Conversation-Pearls-Transcription-Series-2023-7-31-I/</loc>
+    <loc>https://springbudder.github.io/2023/11/02/Conversation-Pearls-Transcription-Series-2023-11-2/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -317,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2023/11/02/Conversation-Pearls-Transcription-Series-2023-11-2/</loc>
+    <loc>https://springbudder.github.io/2023/07/31/Conversation-Pearls-Transcription-Series-2023-7-31-I/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -451,6 +415,42 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://springbudder.github.io/2017/07/07/Managing-many-models-in-R/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/05/23/Leetcode-median-of-two-sorted-arrays/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/06/07/Martingale-and-Markov-Chain/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/01/Memory-management-in-R/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   <url>
     <loc>https://springbudder.github.io/</loc>
@@ -510,13 +510,6 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/tags/Python/</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://springbudder.github.io/tags/C/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -531,6 +524,13 @@
   </url>
   
   <url>
+    <loc>https://springbudder.github.io/tags/Python/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://springbudder.github.io/tags/Bioinformatics/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -538,14 +538,14 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/tags/SVM/</loc>
+    <loc>https://springbudder.github.io/tags/ggplot2/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/tags/ggplot2/</loc>
+    <loc>https://springbudder.github.io/tags/SVM/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

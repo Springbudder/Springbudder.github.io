@@ -16,7 +16,7 @@
 <meta property="og:description" content="Source code in the file Biostrings&#x2F;R&#x2F;00datacache.R1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556### &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;">
 <meta property="og:locale">
 <meta property="article:published_time" content="2017-07-18T12:27:57.000Z">
-<meta property="article:modified_time" content="2026-10-01T18:32:23.655Z">
+<meta property="article:modified_time" content="2026-10-01T18:40:32.571Z">
 <meta property="article:author" content="Springbudder">
 <meta property="article:tag" content="R">
 <meta name="twitter:card" content="summary">
@@ -154,14 +154,14 @@
       
         <h3 id="Source-code-in-the-file-Biostrings-R-00datacache-R"><a href="#Source-code-in-the-file-Biostrings-R-00datacache-R" class="headerlink" title="Source code in the file Biostrings/R/00datacache.R"></a>Source code in the file <code>Biostrings/R/00datacache.R</code></h3><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### =========================================================================</span></span><br><span class="line"><span class="comment">### Environment for storing run-time objects</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"></span><br><span class="line">RTobjs <span class="operator">&lt;-</span> new.env<span class="punctuation">(</span>hash<span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">,</span> parent<span class="operator">=</span><span class="built_in">emptyenv</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### =========================================================================</span></span><br><span class="line"><span class="comment">### Serialized objects</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"></span><br><span class="line">SERIALIZED_OBJNAMES <span class="operator">&lt;-</span> <span class="built_in">c</span><span class="punctuation">(</span></span><br><span class="line">    <span class="string">&quot;BLOSUM45&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;BLOSUM50&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;BLOSUM62&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;BLOSUM80&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;BLOSUM100&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;PAM30&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;PAM40&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;PAM70&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;PAM120&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;PAM250&quot;</span></span><br><span class="line"><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></span><br><span class="line"><span class="comment">### Objects created &quot;on-the-fly&quot; (not serialized)</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"><span class="comment">### WARNING: Improper calls to &#x27;getdata&#x27; by the &#x27;createObject&#x27; function can</span></span><br><span class="line"><span class="comment">### lead to infinite recursive loops!</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"></span><br><span class="line">createObject <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>objname<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment"># add more here...</span></span><br><span class="line">    stop<span class="punctuation">(</span><span class="string">&quot;don&#x27;t know how to create object &#x27;&quot;</span><span class="punctuation">,</span> objname<span class="punctuation">,</span> <span class="string">&quot;&#x27;&quot;</span><span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></span><br><span class="line"><span class="comment">### The &quot;getdata&quot; function (NOT exported)</span></span><br><span class="line"><span class="comment">###</span></span><br><span class="line"></span><br><span class="line">datacache <span class="operator">&lt;-</span> new.env<span class="punctuation">(</span>hash<span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">,</span> parent<span class="operator">=</span><span class="built_in">emptyenv</span><span class="punctuation">(</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"></span><br><span class="line">getdata <span class="operator">&lt;-</span> <span class="keyword">function</span><span class="punctuation">(</span>objname<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="punctuation">(</span><span class="operator">!</span>exists<span class="punctuation">(</span>objname<span class="punctuation">,</span> envir<span class="operator">=</span>datacache<span class="punctuation">)</span><span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="keyword">if</span> <span class="punctuation">(</span>objname <span class="operator">%in%</span> SERIALIZED_OBJNAMES<span class="punctuation">)</span> <span class="punctuation">&#123;</span></span><br><span class="line">            data<span class="punctuation">(</span><span class="built_in">list</span><span class="operator">=</span>objname<span class="punctuation">,</span> package<span class="operator">=</span><span class="string">&quot;Biostrings&quot;</span><span class="punctuation">,</span> envir<span class="operator">=</span>datacache<span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#125;</span> <span class="keyword">else</span> <span class="punctuation">&#123;</span></span><br><span class="line">            assign<span class="punctuation">(</span>objname<span class="punctuation">,</span> createObject<span class="punctuation">(</span>objname<span class="punctuation">)</span><span class="punctuation">,</span> envir<span class="operator">=</span>datacache<span class="punctuation">)</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line">    get<span class="punctuation">(</span>objname<span class="punctuation">,</span> envir<span class="operator">=</span>datacache<span class="punctuation">)</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 <hr>
-#### Function description
-1. `new.env()`<pre>new.env(hash = TRUE, parent = parent.frame(), size = 29L)</pre>
-2. `data()`
-`data()` was originally intended to allow users to load datasets from packages for use in their examples, and as such it loaded the datasets into the workspace .GlobalEnv. This avoided having large datasets in memory when not in use. That need has been almost entirely superseded by lazy-loading of datasets.
-3. `assign()`
-Assign a value to a name in an environment.
-4. `get()`
-Search by name for an object (`get()`) or zero or more objects (`mget()`).
+
+<h4 id="Function-description"><a href="#Function-description" class="headerlink" title="Function description"></a>Function description</h4><ol>
+<li><code>new.env()</code><pre>new.env(hash = TRUE, parent = parent.frame(), size = 29L)</pre></li>
+<li><code>data()</code><br><code>data()</code> was originally intended to allow users to load datasets from packages for use in their examples, and as such it loaded the datasets into the workspace .GlobalEnv. This avoided having large datasets in memory when not in use. That need has been almost entirely superseded by lazy-loading of datasets.</li>
+<li><code>assign()</code><br>Assign a value to a name in an environment.</li>
+<li><code>get()</code><br>Search by name for an object (<code>get()</code>) or zero or more objects (<code>mget()</code>).</li>
+</ol>
+
       
 
       
@@ -361,10 +361,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -373,15 +369,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bioinformatics</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
+                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ggplot2</a>
+                <a href="javascript:void(0)" class="js-tag color4">SVM</a>
               </li>
              
               <li class="article-tag-list-item">
