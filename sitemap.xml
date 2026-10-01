@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://springbudder.github.io/2017/06/03/%E5%AE%9A%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
+    <loc>https://springbudder.github.io/2022/09/14/%E5%AE%AA%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://springbudder.github.io/2022/09/14/%E5%AE%AA%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
+    <loc>https://springbudder.github.io/2017/06/03/%E5%AE%9A%E5%AE%97%E5%97%A3%E7%AB%8B/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -30,6 +30,87 @@
   
   <url>
     <loc>https://springbudder.github.io/2017/05/22/%E5%A4%AA%E7%A5%96%E7%A7%B0%E6%B1%97/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/05/23/Leetcode-median-of-two-sorted-arrays/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/07/Managing-many-models-in-R/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/06/07/Martingale-and-Markov-Chain/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/05/11/My-paradigm-of-introducing-a-medical-product-2023-5-11/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/01/Memory-management-in-R/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/11/08/Myriad-genetics-Third-Quarter-2023-Earnings-2023-11-8/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/10/Numba-package-speeds-up-my-Python/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/16/POSIX-multithreading/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/08/Programming-language-characteristics/</loc>
     
     <lastmod>2026-10-01</lastmod>
     
@@ -146,6 +227,141 @@
   </url>
   
   <url>
+    <loc>https://springbudder.github.io/2017/06/04/A-cd-trick/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/04/07/A-glimpse-of-chatGPT-2023-4-7/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/05/26/A-raw-implement-of-Perceptron/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/05/Analyzing-Non-Normal-Data/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/06/08/Bias-Variance-Decompostion/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/18/Biostrings-Source-Code-reading-1/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/22/Biostrings-Source-Code-reading-2/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/07/23/Biostrings-Source-Code-reading-3/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/06/21/Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/07/31/Conversation-Pearls-Transcription-Series-2023-7-31-I/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/11/02/Conversation-Pearls-Transcription-Series-2023-11-2/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/08/01/Conversation-Pearls-Transcription-Series-2023-7-31-II/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/08/03/Conversation-Pearls-Transcription-Series-2023-8-3/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2023/08/07/Conversation-Pearls-Transcription-Series-2023-8-7/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://springbudder.github.io/2017/05/29/DFS-and-BFS/</loc>
+    
+    <lastmod>2026-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://springbudder.github.io/2017/05/20/Data-encoding-and-Features-selection/</loc>
     
     <lastmod>2026-10-01</lastmod>
@@ -235,222 +451,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://springbudder.github.io/2017/05/23/Leetcode-median-of-two-sorted-arrays/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/07/Managing-many-models-in-R/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/01/Memory-management-in-R/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/06/07/Martingale-and-Markov-Chain/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/11/08/Myriad-genetics-Third-Quarter-2023-Earnings-2023-11-8/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/05/11/My-paradigm-of-introducing-a-medical-product-2023-5-11/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/10/Numba-package-speeds-up-my-Python/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/16/POSIX-multithreading/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/08/Programming-language-characteristics/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/04/07/A-glimpse-of-chatGPT-2023-4-7/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/05/26/A-raw-implement-of-Perceptron/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/06/04/A-cd-trick/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/05/Analyzing-Non-Normal-Data/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/06/08/Bias-Variance-Decompostion/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/18/Biostrings-Source-Code-reading-1/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/23/Biostrings-Source-Code-reading-3/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/06/21/Classification-of-Fungi-and-Protozoa-Traditonal-and-molecular/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/07/22/Biostrings-Source-Code-reading-2/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/11/02/Conversation-Pearls-Transcription-Series-2023-11-2/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/07/31/Conversation-Pearls-Transcription-Series-2023-7-31-I/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/08/01/Conversation-Pearls-Transcription-Series-2023-7-31-II/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/08/07/Conversation-Pearls-Transcription-Series-2023-8-7/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2023/08/03/Conversation-Pearls-Transcription-Series-2023-8-3/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/2017/05/29/DFS-and-BFS/</loc>
-    
-    <lastmod>2026-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://springbudder.github.io/</loc>
@@ -461,6 +461,13 @@
 
   
   <url>
+    <loc>https://springbudder.github.io/tags/System-Windows/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://springbudder.github.io/tags/Medical-technology/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -469,13 +476,6 @@
   
   <url>
     <loc>https://springbudder.github.io/tags/ML/</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://springbudder.github.io/tags/System-Windows/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
