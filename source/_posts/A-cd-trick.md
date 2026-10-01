@@ -2,7 +2,6 @@
 title: cmd tricks and make the hexo reuseful in another PC
 date: 2017-06-04 19:44:24
 tags: System/Windows
-categories: 数据科学与编程
 ---
 #### <em>`cd`</em> command
 when cmd firstly initialized, the default working path would be as the follow:

@@ -2,7 +2,6 @@
 title: A glimpse of chatGPT - 2023.4.7
 date: 2023-04-07 01:30:39
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 

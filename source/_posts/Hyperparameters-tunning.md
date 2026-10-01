@@ -2,7 +2,6 @@
 title: Hyperparameters tunning
 date: 2017-01-06 00:52:48
 tags: ML
-categories: 数据科学与编程
 ---
 ### Tuning hyperparameters
 

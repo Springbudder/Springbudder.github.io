@@ -2,7 +2,6 @@
 title: Conversation Pearls Transcription Series - 2023.7.31 - I
 date: 2023-07-31 21:01:15
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 

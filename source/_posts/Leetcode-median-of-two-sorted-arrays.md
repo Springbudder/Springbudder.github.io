@@ -2,7 +2,6 @@
 title: 'Leetcode: median of two sorted arrays'
 date: 2017-05-23 13:16:20
 tags: LeetCode
-categories: 数据科学与编程
 ---
 
 Something interesting.

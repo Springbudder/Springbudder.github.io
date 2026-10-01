@@ -2,7 +2,6 @@
 title: Data encoding and Features selection
 date: 2017-05-20 20:30:06
 tags: ML
-categories: 数据科学与编程
 ---
 ### Representing Data and Engineering Features
 

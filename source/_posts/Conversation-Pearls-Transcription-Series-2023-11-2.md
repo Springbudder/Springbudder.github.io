@@ -2,7 +2,6 @@
 title: Conversation-Pearls-Transcription-Series-2023-11-2
 date: 2023-11-02 00:11:42
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 ### The current status and development of pathology in hospitals

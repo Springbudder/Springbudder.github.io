@@ -2,7 +2,6 @@
 title: k-Means, DBSCAN and agglomerative clustring
 date: 2017-05-20 15:47:29
 tags: ML
-categories: 数据科学与编程
 ---
 ### Cluatering methods
 + <b><em>k</em>-Means</b>

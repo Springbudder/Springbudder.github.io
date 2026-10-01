@@ -2,7 +2,6 @@
 title: My paradigm of introducing a medical product - 2023.5.11
 date: 2023-05-11 23:28:13
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 ### My paradigm of introducing a medical product - 2023.5.11

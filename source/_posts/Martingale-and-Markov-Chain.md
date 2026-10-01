@@ -2,8 +2,6 @@
 title: Martingale and Markov Chain
 date: 2017-06-07 18:58:05
 tags: Biology
-categories: 数据科学与编程
-math: true
 ---
 #### A very intuitive view
 * Fair game

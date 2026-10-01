@@ -2,7 +2,6 @@
 title: Python Decorators and R Functional Programming
 date: 2017-06-04 19:58:05
 tags: ML
-categories: 数据科学与编程
 ---
 <p><strong>Decorator</strong> is a very powerful feature in Python. It makes <b>functional programming</b> more convenient, albeit Python is not a much feasible option. Strictly, I think decorators is just a syntax sugar. Compared to R, functional programming implemented by my own with Python is less elegant and natural.</p>
 <p>Beside decorators, `lambda` expression is aimming at functional programmingas well as `apply` series function in R language.</p>For example, sort a linked lists:{% codeblock lang:Python %}

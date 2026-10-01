@@ -2,7 +2,6 @@
 title: Grouped Barplot in My Paper
 date: 2017-06-23 19:23:00
 tags: Biology
-categories: 数据科学与编程
 ---
 [1. Very impressive cheetsheet](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf)
 [2. Instruction of barplots: A good blog](http://t-redactyl.io/blog/2016/01/creating-plots-in-r-using-ggplot2-part-4-stacked-bar-plots.html)

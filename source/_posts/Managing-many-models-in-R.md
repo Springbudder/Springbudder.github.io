@@ -2,7 +2,6 @@
 title: Managing many models in R
 date: 2017-07-07 14:25:23
 tags: R
-categories: 数据科学与编程
 ---
 ### Three idea underlying the data
 Each idea is partnered with a package:

@@ -2,7 +2,6 @@
 title: Conversation-Pearls-Transcription-Series-2023-8-3
 date: 2023-08-03 23:24:51
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 #### Mass Spectrometry, MALDI-TOF MS, and NGS

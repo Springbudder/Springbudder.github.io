@@ -2,7 +2,6 @@
 title: 'LeetCode 50-Pow(x, n)'
 date: 2017-06-06 16:54:14
 tags: LeetCode
-categories: 数据科学与编程
 ---
 <details><summary>Question description:</summary>Implement `pow(x, n)`.</details>
 C++ Version

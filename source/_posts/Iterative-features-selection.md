@@ -2,7 +2,6 @@
 title: Iterative features selection
 date: 2017-05-21 19:42:21
 tags: ML
-categories: 数据科学与编程
 ---
 #### Forward and Backward
 <p>There are two basic methods: starting with no features and adding features one by one until some stopping criterion is reached, or starting with all features and removing features one by one until some stopping criterion is reached.</p>

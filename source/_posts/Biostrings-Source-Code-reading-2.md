@@ -2,7 +2,6 @@
 title: Biostrings Source Code reading 2
 date: 2017-07-22 17:32:16
 tags: R
-categories: 数据科学与编程
 ---
 ### Source code in the file `Biostrings/R/AlignedXStringSet.R`
 ```r

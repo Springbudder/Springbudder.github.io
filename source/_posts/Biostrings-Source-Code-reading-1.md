@@ -2,7 +2,6 @@
 title: Biostrings Source Code reading 1
 date: 2017-07-18 20:27:57
 tags: R
-categories: 数据科学与编程
 ---
 ### Source code in the file `Biostrings/R/00datacache.R`
 ```r

@@ -2,7 +2,6 @@
 title: Something about tidyverseR
 date: 2017-06-25 18:11:13
 tags: R
-categories: 数据科学与编程
 ---
 ### Package `dplyr`
 #### Data Manipulationg

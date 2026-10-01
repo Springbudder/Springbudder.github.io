@@ -2,7 +2,6 @@
 title: Zen about Graphs in Paper
 date: 2017-07-05 16:17:13
 tags: ggplot2
-categories: 数据科学与编程
 ---
 ### Graphs
 >The simple graph has brought more information to the data analyst’s mind than any other device.

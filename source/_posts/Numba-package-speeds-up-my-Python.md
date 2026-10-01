@@ -2,7 +2,6 @@
 title: Numba package speeds up my Python
 date: 2017-07-10 15:06:52
 tags: Python
-categories: 数据科学与编程
 ---
 ### INTRODUCTION
 Numba is a compiler for Python array and numerical functions that gives you the power to speed up your applications with high performance functions written directly in Python.<br>

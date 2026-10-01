@@ -2,7 +2,6 @@
 title: sunburst plot and d3 heatmap
 date: 2017-05-30 22:21:13
 tags: R/visualization
-categories: 数据科学与编程
 ---
 ### How to post R interactive file to Hexo
 * R

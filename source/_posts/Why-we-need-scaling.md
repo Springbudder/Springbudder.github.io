@@ -2,7 +2,6 @@
 title: Why we need scaling?
 date: 2017-05-19 20:49:30
 tags: SVM
-categories: 数据科学与编程
 ---
 #### Explanantion 1:
 <p>Scaling before applying SVM is very important. Part 2 of Sarle’s Neural Networks FAQ Sarle (1997) explains the importance of this and most of considerations also apply to SVM. The main advantage of scaling is <b>to avoid attributes in greater numeric ranges dominating those in smaller numeric ranges</b>. Another advantage is <b>to avoid numerical difficulties during the calculation</b>. Because kernel values usually depend on the inner products of feature vectors, e.g. the linear kernel and the polynomial kernel, large attribute values might cause numerical problems. We recommend linearly scaling each attribute to the range [−1, +1] or [0, 1].</p>

@@ -2,7 +2,6 @@
 title: LeetCode 27-Remove Element
 date: 2017-06-05 20:14:16
 tags: LeetCode
-categories: 数据科学与编程
 ---
 Given an array and a value, remove all instances of that value in place and return the new length.<br>Do not allocate extra space for another array, you must do this in place with constant memory.
 The order of elements can be changed. It doesn't matter what you leave beyond the new length.<br><details><summary>Example:</summary>

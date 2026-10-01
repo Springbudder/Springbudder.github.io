@@ -2,7 +2,6 @@
 title: Conversation-Pearls-Transcription-Series-2023-7-31-II
 date: 2023-08-01 20:38:06
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 

@@ -2,7 +2,6 @@
 title: Conversation Pearls Transcription Series - 2023-8-7
 date: 2023-08-07 21:47:53
 tags: Medical technology
-categories: 医药与诊断
 ---
 
 #### Long-term impact of escalating anti-corruption in the pharmaceutical industry

@@ -2,7 +2,6 @@
 title: LeetCode 21-Merge Two Sorted Lists
 date: 2017-06-10 16:22:19
 tags: LeetCode
-categories: 数据科学与编程
 ---
 #### Description
 Question: Merge two sorted lists

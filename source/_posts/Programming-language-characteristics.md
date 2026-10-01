@@ -2,7 +2,6 @@
 title: Programming language characteristics
 date: 2017-07-08 19:18:29
 tags: Programming
-categories: 数据科学与编程
 ---
 Yesterday I saw a post which talks about how to learn programming. In this post, the poster said the most important aspect of a programming language is characteristics. So what are characteristics of a programming language? I googled the topic and got a video, then I jogged down the main content. 
 ### CREATING RECIPES

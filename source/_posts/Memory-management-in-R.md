@@ -2,7 +2,6 @@
 title: Memory management in R
 date: 2017-07-01 11:54:38
 tags: R
-categories: 数据科学与编程
 ---
 ### Object size
 To determine the size of an object in R, built-in function `object_size()` is an option. Alternatively, the function `object_size()` in the package `pryr`, which has the same name with that of in the builtin namespace is better than that since it accounts for shared elements within an object and includes the size of environments. For example:

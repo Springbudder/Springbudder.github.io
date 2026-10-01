@@ -2,7 +2,6 @@
 title: Classification of Fungi and Protozoa-Traditonal and molecular
 date: 2017-06-21 20:40:36
 tags: Biology
-categories: 医药与诊断
 ---
 Traditionally, the main differences between fungi and protozoa are as follows:
 

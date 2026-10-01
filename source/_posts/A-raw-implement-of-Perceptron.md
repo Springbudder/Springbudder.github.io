@@ -2,7 +2,6 @@
 title: A raw implement of Perceptron
 date: 2017-05-26 22:44:35
 tags: ML
-categories: 数据科学与编程
 ---
 <p>The perceptron classified the two Iris flower classes perfectly, <b>convergence</b> is one of the biggest problems of the perceptron. Frank Rosenblatt proved mathematically that:
 

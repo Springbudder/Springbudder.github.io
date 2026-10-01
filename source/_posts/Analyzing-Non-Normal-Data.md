@@ -2,8 +2,6 @@
 title: Analyzing Non-Normal Data
 date: 2017-07-05 23:59:36
 tags: Statistics
-categories: 数据科学与编程
-math: true
 ---
 #### Determine the normality of the dataset
 1. <b>Histogram</b>&nbsp;&nbsp;&nbsp;&nbsp;Do your data resemble a bell-shaped curve?

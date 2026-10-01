@@ -2,7 +2,6 @@
 title: The difference between various methods to import csv data
 date: 2017-07-06 13:18:53
 tags: R
-categories: 数据科学与编程
 ---
 #### Data import methods
 There are several ways to import a csv data, which the most convinient format data into our workspace. Here are the methods:
