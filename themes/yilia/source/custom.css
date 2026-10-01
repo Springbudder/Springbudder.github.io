@@ -1,0 +1,56 @@
+/* 在 Yilia 原样式（main.*.css）之上的修补，后加载、覆盖原规则 */
+
+/* 左栏 / 手机侧栏副标题：允许 <br> 多行，取消两行截断 */
+.left-col #header .header-subtitle,
+.header-subtitle {
+  display: block;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+}
+
+/* 代码块：不折行，整块横向滚动；行号与代码顶部对齐 */
+.article-entry .highlight {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.article-entry .highlight td {
+  vertical-align: top;
+}
+.article-entry pre,
+.article-entry .highlight pre,
+.article-entry .highlight .line {
+  white-space: pre;
+  word-wrap: normal;
+  overflow-wrap: normal;
+}
+.article-entry .highlight td.code pre {
+  overflow: visible;
+}
+/* 滚动条始终可见（触屏上也提示可以横向滑动） */
+.article-entry .highlight::-webkit-scrollbar,
+.article-entry pre::-webkit-scrollbar {
+  height: 8px;
+}
+.article-entry .highlight::-webkit-scrollbar-thumb,
+.article-entry pre::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 4px;
+}
+.article-entry .highlight::-webkit-scrollbar-track,
+.article-entry pre::-webkit-scrollbar-track {
+  background: #3a3b35;
+}
+
+/* 行内代码：长路径在窄屏上允许断行 */
+.article-entry p code,
+.article-entry li code,
+.article-entry h1 code, .article-entry h2 code, .article-entry h3 code,
+.article-entry h4 code, .article-entry h5 code, .article-entry h6 code {
+  overflow-wrap: anywhere;
+}
+
+/* 公式：长公式在窄屏上横向滚动，而不是撑出正文 */
+.article-entry .MathJax_Display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
