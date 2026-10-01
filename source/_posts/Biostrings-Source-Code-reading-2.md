@@ -183,12 +183,14 @@ setMethod("toString", "AlignedXStringSet0",
 
 ```
 <hr>
+
 #### Function & Class description
 1. `AlignedXStringSet0` is a base class, inherited by `AlignedXStringSet` and `QualityAlignedXStringSet`. Here note the `mismatch`,`indel` and `unaligned` attributes. 
 2. Accessor
 > `Java`: An accessor method does exactly what it says on the tin: accesses some state from the type without side effects (apart from lazy instantiation, perhaps, which is not something that the caller would normally know about).
 
 <hr>
+
 Reference:
 1. [Advanced R](http://adv-r.had.co.nz/OO-essentials.html)
 2. [S4 OOP](https://www.bioconductor.org/help/course-materials/2010/AdvancedR/S4InBioconductor.pdf)

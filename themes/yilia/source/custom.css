@@ -8,9 +8,11 @@
   overflow: visible;
 }
 
-/* 代码块：不折行，整块横向滚动；行号与代码顶部对齐 */
-.article-entry .highlight {
-  overflow-x: auto;
+/* 代码块：不折行；超长（宽或高）时在框内滚动；行号与代码顶部对齐 */
+.article-entry .highlight,
+.article-entry > pre {
+  max-height: 480px;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
 .article-entry .highlight td {
@@ -30,6 +32,7 @@
 .article-entry .highlight::-webkit-scrollbar,
 .article-entry pre::-webkit-scrollbar {
   height: 8px;
+  width: 8px;
 }
 .article-entry .highlight::-webkit-scrollbar-thumb,
 .article-entry pre::-webkit-scrollbar-thumb {
@@ -38,6 +41,10 @@
 }
 .article-entry .highlight::-webkit-scrollbar-track,
 .article-entry pre::-webkit-scrollbar-track {
+  background: #3a3b35;
+}
+.article-entry .highlight::-webkit-scrollbar-corner,
+.article-entry pre::-webkit-scrollbar-corner {
   background: #3a3b35;
 }
 

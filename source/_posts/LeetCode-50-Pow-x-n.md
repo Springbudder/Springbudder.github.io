@@ -3,7 +3,7 @@ title: 'LeetCode 50-Pow(x, n)'
 date: 2017-06-06 16:54:14
 tags: LeetCode
 ---
-<details><summary>Question description:</summary>Implement `pow(x, n)`.</details>
+<details><summary>Question description:</summary>Implement <code>pow(x, n)</code>.</details>
 C++ Version
 {% codeblock lang:Cpp %}
 class Solution {

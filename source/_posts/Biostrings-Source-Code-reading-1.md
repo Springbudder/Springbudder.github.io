@@ -63,6 +63,7 @@ getdata <- function(objname)
 }
 ```
 <hr>
+
 #### Function description
 1. `new.env()`<pre>new.env(hash = TRUE, parent = parent.frame(), size = 29L)</pre>
 2. `data()`
